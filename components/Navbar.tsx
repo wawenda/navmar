@@ -45,7 +45,7 @@ export default function Navbar() {
                 NAVMAR
               </span>
               <span className="text-[10px] md:text-xs font-bold text-accent tracking-wider uppercase whitespace-nowrap">
-                Agency
+                ShippingAgency
               </span>
             </div>
           </Link>
