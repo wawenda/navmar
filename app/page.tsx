@@ -94,8 +94,8 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
               </div>
-              <h3 className="text-3xl md:text-4xl font-bold text-primary mb-1">İSK</h3>
-              <p className="text-sm text-gray-600 font-medium">İskenderun Limanı</p>
+              <h3 className="text-3xl md:text-4xl font-bold text-primary mb-1">2</h3>
+              <p className="text-sm text-gray-600 font-medium">Aktif Liman</p>
             </div>
 
             {/* Feature 4 */}

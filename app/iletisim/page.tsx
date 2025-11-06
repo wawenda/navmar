@@ -36,42 +36,9 @@ export default function Iletisim() {
                 İletişim Bilgileri
               </h2>
               <div className="space-y-3 flex-1">
-                {/* Phone 1 */}
+                {/* Phone 1 / WhatsApp */}
                 <a
                   href="tel:+905056453119"
-                  className="flex items-start gap-3 p-4 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors group border border-slate-200"
-                >
-                  <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                    <svg
-                      className="w-5 h-5 text-accent"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                      />
-                    </svg>
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-xs text-gray-500 uppercase tracking-wider mb-0.5">
-                      Telefon
-                    </p>
-                    <p className="font-semibold text-primary text-sm">
-                      +90 (505) 645 31 19
-                    </p>
-                    <p className="text-xs text-accent font-medium">
-                      7/24 Acil Hizmet
-                    </p>
-                  </div>
-                </a>
-
-                {/* Phone 2 / WhatsApp */}
-                <a
-                  href="tel:+905455476013"
                   className="flex items-start gap-3 p-4 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors group border border-slate-200"
                 >
                   <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
@@ -94,10 +61,43 @@ export default function Iletisim() {
                       Telefon / WhatsApp
                     </p>
                     <p className="font-semibold text-primary text-sm">
-                      +90 (545) 547 60 13
+                      +90 (505) 645 31 19
                     </p>
                     <p className="text-xs text-accent font-medium">
                       WhatsApp Hattı
+                    </p>
+                  </div>
+                </a>
+
+                {/* Phone 2 - 7/24 Service */}
+                <a
+                  href="tel:+905455476013"
+                  className="flex items-start gap-3 p-4 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors group border border-slate-200"
+                >
+                  <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                    <svg
+                      className="w-5 h-5 text-accent"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                      />
+                    </svg>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-xs text-gray-500 uppercase tracking-wider mb-0.5">
+                      Telefon
+                    </p>
+                    <p className="font-semibold text-primary text-sm">
+                      +90 (545) 547 60 13
+                    </p>
+                    <p className="text-xs text-accent font-medium">
+                      7/24 Kesintisiz Hizmet
                     </p>
                   </div>
                 </a>
@@ -203,7 +203,7 @@ export default function Iletisim() {
                         Instagram
                       </a>
                       <a
-                        href="https://wa.me/905455476013"
+                        href="https://wa.me/905056453119"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center gap-1.5 px-3 py-1.5 bg-[#25D366] text-white rounded-lg hover:shadow-lg transition-all text-xs font-medium"

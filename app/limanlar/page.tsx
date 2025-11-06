@@ -4,11 +4,11 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "Hizmet Verdiğimiz Limanlar",
   description:
-    "NAVMAR Gemi Acenteliği olarak İskenderun Limanı'nda 7/24 kesintisiz profesyonel hizmet sunuyoruz.",
+    "NAVMAR Gemi Acenteliği olarak İskenderun ve Mersin Limanları'nda 7/24 kesintisiz profesyonel hizmet sunuyoruz.",
   openGraph: {
     title: "Hizmet Verdiğimiz Limanlar | Navmar Agency",
     description:
-      "NAVMAR Gemi Acenteliği olarak İskenderun Limanı'nda 7/24 kesintisiz profesyonel hizmet sunuyoruz.",
+      "NAVMAR Gemi Acenteliği olarak İskenderun ve Mersin Limanları'nda 7/24 kesintisiz profesyonel hizmet sunuyoruz.",
   },
 };
 
@@ -27,6 +27,19 @@ export default function Limanlar() {
         "Gümrük prosedürleri",
       ],
     },
+    {
+      name: "Mersin Limanı",
+      city: "Mersin",
+      description: "Akdeniz'in lider konteyner limanı ve Türkiye'nin en büyük liman komplekslerinden biri",
+      details: [
+        "Konteyner terminali hizmetleri",
+        "Ro-Ro operasyonları",
+        "Genel kargo yükleme-boşaltma",
+        "Gemi acenteliği",
+        "Provizyon ve teknik destek",
+        "Liman içi lojistik çözümleri",
+      ],
+    },
   ];
 
   return (
@@ -35,10 +48,10 @@ export default function Limanlar() {
       <section className="bg-primary text-white py-16 pt-32">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Hizmet Verdiğimiz Liman
+            Hizmet Verdiğimiz Limanlar
           </h1>
           <p className="text-xl text-white/90 max-w-3xl mx-auto">
-            İskenderun Limanı&apos;nda 7/24 kesintisiz profesyonel gemi acenteliği hizmeti sunuyoruz
+            İskenderun ve Mersin Limanları&apos;nda 7/24 kesintisiz profesyonel gemi acenteliği hizmeti sunuyoruz
           </p>
         </div>
       </section>
@@ -57,14 +70,14 @@ export default function Limanlar() {
             </div>
             <div>
               <h2 className="text-3xl font-bold text-primary mb-4">
-                İskenderun Limanı&apos;nda Uzman Hizmet
+                Akdeniz Limanlarında Uzman Hizmet
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                <strong className="text-primary">NAVMAR Gemi Acenteliği</strong> olarak, İskenderun Limanı&apos;nda 
+                <strong className="text-primary">NAVMAR Gemi Acenteliği</strong> olarak, İskenderun ve Mersin Limanları&apos;nda 
                 gemi acenteliği ve husbandry hizmetlerinde uzmanlaşmış profesyonel bir ekibe sahibiz.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Bölgedeki güçlü bağlantılarımız ve deneyimli kadromuzla gemilerinizin tüm ihtiyaçlarını 
+                Akdeniz bölgesindeki güçlü bağlantılarımız ve deneyimli kadromuzla gemilerinizin tüm ihtiyaçlarını 
                 hızlı ve güvenilir bir şekilde karşılıyoruz. Profesyonel çözümler sunmak için 7/24 hizmetinizdeyiz.
               </p>
             </div>
@@ -74,7 +87,7 @@ export default function Limanlar() {
 
       {/* Port Details */}
       <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4">
+        <div className="max-w-4xl mx-auto px-4 space-y-8">
           {ports.map((port, index) => (
             <div
               key={index}
@@ -171,8 +184,8 @@ export default function Limanlar() {
                   />
                 </svg>
               </div>
-              <h3 className="text-3xl font-bold text-primary mb-2">İskenderun</h3>
-              <p className="text-gray-600">Stratejik Konum</p>
+              <h3 className="text-3xl font-bold text-primary mb-2">2</h3>
+              <p className="text-gray-600">Aktif Liman</p>
             </div>
 
             <div className="bg-white rounded-2xl p-8 shadow-sm">
@@ -222,10 +235,10 @@ export default function Limanlar() {
       <section className="py-16 bg-primary text-white">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            İskenderun Limanı&apos;nda Hizmet Almak İster misiniz?
+            Limanlarımızda Hizmet Almak İster misiniz?
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Size en iyi hizmeti sunmak için 7/24 hazırız
+            İskenderun ve Mersin&apos;de size en iyi hizmeti sunmak için 7/24 hazırız
           </p>
           <a
             href="/iletisim"

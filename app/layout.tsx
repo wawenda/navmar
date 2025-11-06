@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
+import { LanguageProvider } from "@/contexts/LanguageContext";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://navmaragency.com"),
@@ -28,10 +29,12 @@ export default function RootLayout({
   return (
     <html lang="tr">
       <body className="flex flex-col min-h-screen bg-white">
-        <Navbar />
-        <main className="flex-grow pt-0">{children}</main>
-        <Footer />
-        <WhatsAppFloat />
+        <LanguageProvider>
+          <Navbar />
+          <main className="flex-grow pt-0">{children}</main>
+          <Footer />
+          <WhatsAppFloat />
+        </LanguageProvider>
       </body>
     </html>
   );

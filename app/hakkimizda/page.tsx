@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import ReferencesCarousel from "@/components/ReferencesCarousel";
 
 export const metadata: Metadata = {
   title: "Hakkımızda",
@@ -178,8 +179,32 @@ export default function Hakkimizda() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
+      {/* References Section */}
       <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+              Referanslarımız
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Güvenilirliğimizi kanıtlayan, birlikte çalıştığımız prestijli şirketler
+            </p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <ReferencesCarousel />
+          </div>
+
+          <div className="text-center mt-12 pt-8 border-t border-slate-200">
+            <p className="text-gray-600 italic">
+              &quot;Güvenilir iş ortaklıklarımızla denizcilik sektöründe fark yaratıyoruz&quot;
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-16 md:py-24 bg-slate-50">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
