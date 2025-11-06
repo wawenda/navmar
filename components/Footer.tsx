@@ -34,7 +34,9 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-white/70 text-sm leading-relaxed mb-4">
-              İskenderun ve Mersin Limanları&apos;nda profesyonel gemi acenteliği ve husbandry hizmetleri.
+              {language === 'tr' 
+                ? "İskenderun ve Mersin Limanları'nda profesyonel gemi acenteliği ve husbandry hizmetleri."
+                : "Professional ship agency and husbandry services in İskenderun and Mersin Ports."}
             </p>
             <div className="flex gap-3">
               <a href="https://www.instagram.com/navmaragency" target="_blank" rel="noopener noreferrer" 
@@ -64,20 +66,20 @@ export default function Footer() {
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
-              Hızlı Linkler
+              {language === 'tr' ? 'Hızlı Linkler' : 'Quick Links'}
             </h4>
             <ul className="space-y-2.5 text-sm">
               {[
-                { name: 'Ana Sayfa', href: '/' },
-                { name: 'Hizmetler', href: '/hizmetler' },
-                { name: 'Limanlar', href: '/limanlar' },
-                { name: 'Hakkımızda', href: '/hakkimizda' },
-                { name: 'İletişim', href: '/iletisim' },
+                { nameTR: 'Ana Sayfa', nameEN: 'Home', href: '/' },
+                { nameTR: 'Hizmetler', nameEN: 'Services', href: '/hizmetler' },
+                { nameTR: 'Limanlar', nameEN: 'Ports', href: '/limanlar' },
+                { nameTR: 'Hakkımızda', nameEN: 'About Us', href: '/hakkimizda' },
+                { nameTR: 'İletişim', nameEN: 'Contact', href: '/iletisim' },
               ].map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-white/70 hover:text-accent transition-colors flex items-center gap-2 group">
                     <span className="w-1 h-1 bg-accent rounded-full group-hover:w-2 transition-all"></span>
-                    {link.name}
+                    {language === 'tr' ? link.nameTR : link.nameEN}
                   </Link>
                 </li>
               ))}
@@ -90,7 +92,7 @@ export default function Footer() {
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
-              İletişim
+              {language === 'tr' ? 'İletişim' : 'Contact'}
             </h4>
             <ul className="space-y-3 text-sm text-white/70">
               <li className="flex items-start gap-2">
@@ -108,7 +110,7 @@ export default function Footer() {
                 </svg>
                 <div>
                   <a href="tel:+905455476013" className="hover:text-accent transition-colors">+90 (545) 547 60 13</a>
-                  <p className="text-xs text-accent">7/24 Hizmet</p>
+                  <p className="text-xs text-accent">{language === 'tr' ? '7/24 Hizmet' : '7/24 Service'}</p>
                 </div>
               </li>
               <li className="flex items-start gap-2">
@@ -129,16 +131,16 @@ export default function Footer() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
-              Adres
+              {language === 'tr' ? 'Adres' : 'Address'}
             </h4>
             <div className="text-sm text-white/70 space-y-2">
               <p className="leading-relaxed">
-                Mustafa Kemal Mahallesi<br />
+                Mustafa Kemal {language === 'tr' ? 'Mahallesi' : 'District'}<br />
                 İbrahim Karaoğlanoğlu Cd. No: 192<br />
-                31200 İskenderun / Hatay
+                31200 İskenderun / Hatay, {language === 'tr' ? 'Türkiye' : 'Turkey'}
               </p>
               <div className="inline-block bg-accent/20 text-accent px-3 py-1.5 rounded-lg text-xs font-semibold mt-2">
-                ⏰ 7/24 Kesintisiz Hizmet
+                ⏰ {language === 'tr' ? '7/24 Kesintisiz Hizmet' : '7/24 Non-Stop Service'}
               </div>
             </div>
           </div>

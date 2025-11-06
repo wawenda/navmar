@@ -1,17 +1,9 @@
-import type { Metadata } from "next";
+'use client';
 
-export const metadata: Metadata = {
-  title: "Hizmetlerimiz",
-  description:
-    "NAVMAR Gemi Acenteliği olarak tayfa değişimi, kumanya ikmali, yedek parça gümrük prosedürleri ve husbandry hizmetlerini özenle sunuyoruz.",
-  openGraph: {
-    title: "Hizmetlerimiz | Navmar Agency",
-    description:
-      "NAVMAR Gemi Acenteliği olarak tayfa değişimi, kumanya ikmali, yedek parça gümrük prosedürleri ve husbandry hizmetlerini özenle sunuyoruz.",
-  },
-};
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Hizmetler() {
+  const { language } = useLanguage();
   const services = [
     {
       icon: (
@@ -24,14 +16,23 @@ export default function Hizmetler() {
           />
         </svg>
       ),
-      title: "Tayfa Değişimi",
-      description:
+      titleTR: "Tayfa Değişimi",
+      titleEN: "Crew Change",
+      descriptionTR:
         "Mürettebat değişikliklerini sorunsuz ve hızlı bir şekilde gerçekleştiriyoruz. Havaalanı transferleri, vize işlemleri ve tüm resmi prosedürleri koordine ediyoruz.",
-      features: [
+      descriptionEN:
+        "We carry out crew changes smoothly and quickly. We coordinate airport transfers, visa procedures, and all official processes.",
+      featuresTR: [
         "Havaalanı transfer hizmetleri",
         "Vize ve pasaport işlemleri",
         "Gemi ile personel koordinasyonu",
         "7/24 acil tayfa değişimi desteği",
+      ],
+      featuresEN: [
+        "Airport transfer services",
+        "Visa and passport procedures",
+        "Ship-crew coordination",
+        "7/24 emergency crew change support",
       ],
     },
     {

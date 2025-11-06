@@ -100,23 +100,25 @@ export default function Navbar() {
             <div className="ml-2 flex items-center gap-1 bg-white/10 rounded-lg p-1">
               <button
                 onClick={() => setLanguage('tr')}
-                className={`px-3 py-1.5 rounded-md text-xs font-semibold transition-all ${
+                className={`px-3 py-1.5 rounded-md text-xs font-semibold transition-all flex items-center gap-1.5 ${
                   language === 'tr'
                     ? 'bg-accent text-primary'
                     : 'text-white/80 hover:text-white'
                 }`}
               >
-                TR
+                <span className="text-base">🇹🇷</span>
+                <span>TR</span>
               </button>
               <button
                 onClick={() => setLanguage('en')}
-                className={`px-3 py-1.5 rounded-md text-xs font-semibold transition-all ${
+                className={`px-3 py-1.5 rounded-md text-xs font-semibold transition-all flex items-center gap-1.5 ${
                   language === 'en'
                     ? 'bg-accent text-primary'
                     : 'text-white/80 hover:text-white'
                 }`}
               >
-                EN
+                <span className="text-base">🇬🇧</span>
+                <span>EN</span>
               </button>
             </div>
           </div>
@@ -174,23 +176,25 @@ export default function Navbar() {
             <div className="flex items-center justify-center gap-2 pt-4 border-t border-white/20">
               <button
                 onClick={() => setLanguage('tr')}
-                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all ${
+                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all flex items-center gap-2 ${
                   language === 'tr'
                     ? 'bg-accent text-primary'
                     : 'bg-white/10 text-white/80'
                 }`}
               >
-                Türkçe
+                <span className="text-lg">🇹🇷</span>
+                <span>Türkçe</span>
               </button>
               <button
                 onClick={() => setLanguage('en')}
-                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all ${
+                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all flex items-center gap-2 ${
                   language === 'en'
                     ? 'bg-accent text-primary'
                     : 'bg-white/10 text-white/80'
                 }`}
               >
-                English
+                <span className="text-lg">🇬🇧</span>
+                <span>English</span>
               </button>
             </div>
           </div>
