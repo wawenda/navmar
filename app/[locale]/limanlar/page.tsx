@@ -87,7 +87,7 @@ export default function Limanlar() {
               {t('ports.services')}
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Türkiye'nin stratejik limanlarında kesintisiz hizmet sunuyoruz
+              Türkiye&apos;nin stratejik limanlarında kesintisiz hizmet sunuyoruz
             </p>
           </div>
 
