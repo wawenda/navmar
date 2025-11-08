@@ -15,7 +15,7 @@
     "subtitle": "Professional maritime services",
     "features": {
       "service247": "24/7 Service",
-      "activePorts": "Active Ports",
+      "activePorts": "İskenderun and Mersin Priority",
       "yearsExperience": "Years Experience",
       "satisfiedClients": "Satisfied Clients"
     },
@@ -90,7 +90,7 @@
     ]
   },
   "footer": {
-    "description": "As NAVMAR Shipping Agency, we provide professional maritime services at İskenderun and Mersin ports.",
+    "description": "As NAVMAR Shipping Agency, we aim to be a reliable business partner in the global maritime network.",
     "quickLinks": "Quick Links",
     "contact": "Contact",
     "service247": "24/7 Non-Stop Service",
@@ -99,7 +99,7 @@
     "country": "Turkey",
     "nonStopService": "24/7 Non-Stop Service",
     "allRightsReserved": "All rights reserved.",
-    "portsFooter": "İskenderun and Mersin Ports"
+    "portsFooter": "İskenderun and Mersin Priority - All Ports in Turkey"
   },
   "services": {
     "title": "Our Husbandry Services",
@@ -111,6 +111,17 @@
       "button": "Contact Us"
     },
     "items": {
+      "portAgency": {
+        "title": "Port Agency",
+        "description": "We provide professional shipping agency services at all ports in Turkey, with priority at İskenderun and Mersin ports. We manage your vessels' port operations smoothly and efficiently.",
+        "features": [
+          "Vessel port entry-exit procedures",
+          "Coordination with port authorities",
+          "Vessel documentation services",
+          "24/7 port agency support",
+          "Port services throughout Turkey"
+        ]
+      },
       "crewChange": {
         "title": "Crew Change",
         "description": "We carry out crew changes smoothly and quickly. We coordinate airport transfers, visa procedures, and all official processes.",
@@ -185,21 +196,21 @@
   },
   "ports": {
     "title": "Ports We Serve",
-    "subtitle": "We provide 7/24 uninterrupted professional shipping agency services at İskenderun and Mersin Ports",
+    "subtitle": "We provide professional shipping agency services at all ports in Turkey, with priority at İskenderun and Mersin ports",
     "intro": {
-      "title": "Expert Service in Mediterranean Ports",
-      "description1": "As NAVMAR Shipping Agency, we have a professional team specialized in shipping agency and husbandry services at İskenderun and Mersin Ports.",
-      "description2": "With our strong connections in the Mediterranean region and experienced staff, we quickly and reliably meet all the needs of your vessels. We are at your service 7/24 to provide professional solutions."
+      "title": "Service at All Ports in Turkey",
+      "description1": "As NAVMAR Shipping Agency, we have a professional team specialized in shipping agency and husbandry services at all ports in Turkey, with priority at İskenderun and Mersin ports.",
+      "description2": "With our strong connections throughout Turkey and experienced staff, we quickly and reliably meet all the needs of your vessels. While providing priority service at İskenderun and Mersin ports, we are at your service 7/24 to provide professional solutions at all other ports in Turkey."
     },
     "services": "Services We Offer",
     "stats": {
-      "activePorts": "Active Ports",
+      "activePorts": "İskenderun and Mersin Priority",
       "service247": "24/7 Service",
       "reliable": "Reliable Service"
     },
     "cta": {
       "title": "Would You Like Service at Our Ports?",
-      "subtitle": "We are ready 7/24 to provide you with the best service in İskenderun and Mersin",
+      "subtitle": "We are ready 7/24 to provide you with the best service at all ports in Turkey, with priority at İskenderun and Mersin",
       "button": "Contact Us Now"
     },
     "items": {
@@ -244,7 +255,7 @@
     "stats": {
       "years": "Years Experience",
       "operations": "Successful Operations",
-      "port": "İskenderun Port",
+      "port": "Active Ports",
       "service247": "24/7 Service"
     },
     "mission": {

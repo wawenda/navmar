@@ -15,7 +15,7 @@
     "subtitle": "Profesyonel denizcilik hizmetleri",
     "features": {
       "service247": "Kesintisiz Hizmet",
-      "activePorts": "Aktif Liman",
+      "activePorts": "İskenderun ve Mersin Öncelikli",
       "yearsExperience": "Yıllık Deneyim",
       "satisfiedClients": "Memnun Müşteri"
     },
@@ -90,7 +90,7 @@
     ]
   },
   "footer": {
-    "description": "NAVMAR Gemi Acenteliği olarak, İskenderun ve Mersin limanlarında profesyonel denizcilik hizmetleri sunuyoruz.",
+    "description": "NAVMAR Gemi Acenteliği olarak, küresel denizcilik ağında güvenilir bir iş ortağı olmayı hedefliyoruz.",
     "quickLinks": "Hızlı Bağlantılar",
     "contact": "İletişim",
     "service247": "7/24 Kesintisiz Hizmet",
@@ -99,7 +99,7 @@
     "country": "Türkiye",
     "nonStopService": "7/24 Kesintisiz Hizmet",
     "allRightsReserved": "Tüm hakları saklıdır.",
-    "portsFooter": "İskenderun ve Mersin Limanları"
+    "portsFooter": "İskenderun ve Mersin Öncelikli - Türkiye'deki Tüm Limanlar"
   },
   "services": {
     "title": "Husbandry Hizmetlerimiz",
@@ -111,6 +111,17 @@
       "button": "Bize Ulaşın"
     },
     "items": {
+      "portAgency": {
+        "title": "Liman Acenteliği",
+        "description": "İskenderun ve Mersin öncelikli olmak üzere Türkiye'deki tüm limanlarda profesyonel gemi acenteliği hizmetleri sunuyoruz. Gemilerinizin liman operasyonlarını sorunsuz ve verimli bir şekilde yönetiyoruz.",
+        "features": [
+          "Gemi liman giriş-çıkış işlemleri",
+          "Liman otoriteleri ile koordinasyon",
+          "Gemi dokümantasyon hizmetleri",
+          "7/24 liman acenteliği desteği",
+          "Türkiye genelinde liman hizmetleri"
+        ]
+      },
       "crewChange": {
         "title": "Tayfa Değişimi",
         "description": "Mürettebat değişikliklerini sorunsuz ve hızlı bir şekilde gerçekleştiriyoruz. Havaalanı transferleri, vize işlemleri ve tüm resmi prosedürleri koordine ediyoruz.",
@@ -185,21 +196,21 @@
   },
   "ports": {
     "title": "Hizmet Verdiğimiz Limanlar",
-    "subtitle": "İskenderun ve Mersin Limanları'nda 7/24 kesintisiz profesyonel gemi acenteliği hizmeti sunuyoruz",
+    "subtitle": "İskenderun ve Mersin öncelikli olacak şekilde Türkiye'deki tüm limanlarda profesyonel gemi acenteliği hizmeti sunuyoruz",
     "intro": {
-      "title": "Akdeniz Limanlarında Uzman Hizmet",
-      "description1": "NAVMAR Gemi Acenteliği olarak, İskenderun ve Mersin Limanları'nda gemi acenteliği ve husbandry hizmetlerinde uzmanlaşmış profesyonel bir ekibe sahibiz.",
-      "description2": "Akdeniz bölgesindeki güçlü bağlantılarımız ve deneyimli kadromuzla gemilerinizin tüm ihtiyaçlarını hızlı ve güvenilir bir şekilde karşılıyoruz. Profesyonel çözümler sunmak için 7/24 hizmetinizdeyiz."
+      "title": "Türkiye'deki Tüm Limanlarda Hizmet",
+      "description1": "NAVMAR Gemi Acenteliği olarak, İskenderun ve Mersin limanlarında öncelikli olmak üzere Türkiye'deki tüm limanlarda gemi acenteliği ve husbandry hizmetlerinde uzmanlaşmış profesyonel bir ekibe sahibiz.",
+      "description2": "Türkiye genelindeki güçlü bağlantılarımız ve deneyimli kadromuzla gemilerinizin tüm ihtiyaçlarını hızlı ve güvenilir bir şekilde karşılıyoruz. İskenderun ve Mersin limanlarında öncelikli hizmet sunarken, Türkiye'deki diğer limanlarda da profesyonel çözümler sunmak için 7/24 hizmetinizdeyiz."
     },
     "services": "Sunduğumuz Hizmetler",
     "stats": {
-      "activePorts": "Aktif Liman",
+      "activePorts": "İskenderun ve Mersin Öncelikli",
       "service247": "Kesintisiz Hizmet",
       "reliable": "Güvenilir Hizmet"
     },
     "cta": {
       "title": "Limanlarımızda Hizmet Almak İster misiniz?",
-      "subtitle": "İskenderun ve Mersin'de size en iyi hizmeti sunmak için 7/24 hazırız",
+      "subtitle": "İskenderun ve Mersin öncelikli olmak üzere Türkiye'deki tüm limanlarda size en iyi hizmeti sunmak için 7/24 hazırız",
       "button": "Hemen İletişime Geçin"
     },
     "items": {
@@ -244,7 +255,7 @@
     "stats": {
       "years": "Yıllık Tecrübe",
       "operations": "Başarılı Operasyon",
-      "port": "İskenderun Limanı",
+      "port": "Aktif Liman",
       "service247": "Kesintisiz Hizmet"
     },
     "mission": {

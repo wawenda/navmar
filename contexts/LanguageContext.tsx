@@ -15,48 +15,67 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
+interface LanguageProviderProps {
+  children: ReactNode;
+  initialLocale?: Locale;
+  initialTranslations?: Translations | null;
+}
+
+export function LanguageProvider({ children, initialLocale, initialTranslations }: LanguageProviderProps) {
   const pathname = usePathname();
   const router = useRouter();
-  const [locale, setLocaleState] = useState<Locale>(defaultLocale);
-  const [translationsData, setTranslationsData] = useState<Translations | null>(null);
-
-  // Extract locale from pathname and load translations
-  useEffect(() => {
+  
+  // Get initial locale from pathname immediately (synchronous)
+  const getInitialLocale = (): Locale => {
+    if (typeof window === 'undefined') return initialLocale || defaultLocale;
     const pathLocale = pathname.split('/')[1];
     if (isValidLocale(pathLocale)) {
-      setLocaleState(pathLocale);
-      // Save to localStorage and cookie
-      if (typeof window !== 'undefined') {
-        localStorage.setItem('preferredLanguage', pathLocale);
-        // Sync with cookie
-        document.cookie = `preferredLanguage=${pathLocale}; path=/; max-age=${60 * 60 * 24 * 365}; sameSite=lax`;
-      }
-      // Load translations immediately
-      translations[pathLocale]().then(setTranslationsData).catch(() => {
-        // Fallback to default if translation fails
-        translations[defaultLocale]().then(setTranslationsData);
-      });
-    } else {
-      // Check cookie first (set by middleware), then localStorage
-      let localeToUse = defaultLocale;
-      if (typeof window !== 'undefined') {
-        const cookieMatch = document.cookie.match(/preferredLanguage=([^;]+)/);
-        const cookieLocale = cookieMatch ? cookieMatch[1] : null;
-        const savedLocale = cookieLocale || localStorage.getItem('preferredLanguage');
-        
-        if (savedLocale && isValidLocale(savedLocale)) {
-          localeToUse = savedLocale;
-        }
-        
-        setLocaleState(localeToUse);
-        // Load translations
-        translations[localeToUse]().then(setTranslationsData).catch(() => {
-          translations[defaultLocale]().then(setTranslationsData);
-        });
-      }
+      return pathLocale;
     }
-  }, [pathname]);
+    // Check cookie first (set by middleware), then localStorage
+    const cookieMatch = document.cookie.match(/preferredLanguage=([^;]+)/);
+    const cookieLocale = cookieMatch ? cookieMatch[1] : null;
+    const savedLocale = cookieLocale || localStorage.getItem('preferredLanguage');
+    return (savedLocale && isValidLocale(savedLocale)) ? savedLocale : (initialLocale || defaultLocale);
+  };
+
+  const [locale, setLocaleState] = useState<Locale>(initialLocale || getInitialLocale());
+  const [translationsData, setTranslationsData] = useState<Translations | null>(initialTranslations || null);
+  const [isLoading, setIsLoading] = useState(!initialTranslations);
+
+  // Load translations immediately on mount and when locale changes
+  useEffect(() => {
+    // If we already have initial translations, skip loading
+    if (initialTranslations) {
+      setIsLoading(false);
+      return;
+    }
+
+    setIsLoading(true);
+    const currentLocale = getInitialLocale();
+    setLocaleState(currentLocale);
+    
+    // Save to localStorage and cookie
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('preferredLanguage', currentLocale);
+      document.cookie = `preferredLanguage=${currentLocale}; path=/; max-age=${60 * 60 * 24 * 365}; sameSite=lax`;
+    }
+    
+    // Load translations immediately
+    translations[currentLocale]()
+      .then((data) => {
+        setTranslationsData(data);
+        setIsLoading(false);
+      })
+      .catch(() => {
+        // Fallback to default if translation fails
+        translations[defaultLocale]()
+          .then((data) => {
+            setTranslationsData(data);
+            setIsLoading(false);
+          });
+      });
+  }, [pathname, initialTranslations]);
 
   const setLocale = (newLocale: Locale) => {
     // Save to localStorage and cookie
@@ -70,12 +89,13 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   };
 
   const t = (key: string): any => {
-    if (!translationsData) return key;
+    // If translations are not loaded yet, return empty string to prevent key flash
+    if (!translationsData || isLoading) return '';
     const keys = key.split('.');
     let value: any = translationsData;
     for (const k of keys) {
       value = value?.[k];
-      if (value === undefined) return key;
+      if (value === undefined) return '';
     }
     return value;
   };

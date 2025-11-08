@@ -59,7 +59,7 @@ export default function Hakkimizda() {
   const stats = [
     { number: "15+", key: 'years' },
     { number: "500+", key: 'operations' },
-    { number: "İSK", key: 'port' },
+    { number: "2+", key: 'port' },
     { number: "7/24", key: 'service247' },
   ];
 
