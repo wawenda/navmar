@@ -5,14 +5,16 @@ import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const galleryImages = [
-  "/ship-1.jpeg",
-  "/ship-2.jpeg",
-  "/ship-3.jpeg",
-  "/ship-4.jpeg",
-  "/ship-5.jpeg",
-  "/ship-6.jpeg",
-  "/ship-8.jpeg",
-  "/ship-deck.jpg",
+  "/gallery/ship-1.jpg",
+  "/gallery/ship-2.jpg",
+  "/gallery/ship-3.jpeg",
+  "/gallery/ship-4.jpeg",
+  "/gallery/ship-5.jpeg",
+  "/gallery/ship-6.jpeg",
+  "/gallery/ship-7.jpeg",
+  "/gallery/ship-8.jpeg",
+  "/gallery/ship-9.jpg",
+  "/gallery/ship-10.jpg",
 ];
 
 export default function GallerySection() {

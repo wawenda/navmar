@@ -39,7 +39,7 @@ export default function Navbar() {
           {/* Logo - Simple Design */}
           <Link 
             href={getLocalizedHref("/")}
-            className="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/15 hover:border-accent/50 transition-all duration-300 group relative z-10"
+            className="flex items-center gap-2.5 px-3 py-2 transition-all duration-300 group relative z-10"
           >
             {/* Logo Icon - With white background */}
             <div className="bg-white p-1 md:p-1.5 rounded-lg shadow-xl group-hover:shadow-2xl transition-all duration-300 flex-shrink-0">
@@ -53,11 +53,11 @@ export default function Navbar() {
             </div>
             
             {/* Brand Text - Modern & Compact */}
-            <div className="hidden md:flex flex-col leading-none justify-center min-w-0">
-              <span className="text-lg md:text-xl font-extrabold text-white tracking-tight whitespace-nowrap">
+            <div className="flex flex-col leading-none justify-center min-w-0">
+              <span className="text-sm md:text-lg lg:text-xl font-extrabold text-white tracking-tight whitespace-nowrap">
                 NAVMAR
               </span>
-              <span className="text-[10px] md:text-xs font-bold text-accent tracking-wider uppercase whitespace-nowrap">
+              <span className="text-[9px] md:text-[10px] lg:text-xs font-bold text-accent tracking-wider uppercase whitespace-nowrap">
                 {language === 'tr' ? 'Gemi Acenteliği' : 'Shipping Agency'}
               </span>
             </div>

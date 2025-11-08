@@ -112,7 +112,7 @@ export default function Hakkimizda() {
             <div className="order-1 lg:order-2">
               <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl mb-6">
                 <Image
-                  src="/ship-7.jpeg"
+                  src="/gallery/ship-9.jpg"
                   alt="Navmar Agency Operations"
                   fill
                   className="object-cover"

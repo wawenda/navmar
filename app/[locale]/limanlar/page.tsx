@@ -12,12 +12,12 @@ export default function Limanlar() {
   const ports = [
     {
       key: 'iskenderun',
-      image: '/port-operations.jpeg',
+      image: '/gallery/iskenderun-liman.jpg',
       color: 'from-blue-600 to-blue-800',
     },
     {
       key: 'mersin',
-      image: '/port-operations.jpeg',
+      image: '/gallery/mersin-limani.jpg',
       color: 'from-teal-600 to-teal-800',
     },
   ];
@@ -54,7 +54,7 @@ export default function Limanlar() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative h-[400px] rounded-3xl overflow-hidden shadow-2xl group">
               <Image
-                src="/port-operations.jpeg"
+                src="/gallery/seaport.jpg"
                 alt="İskenderun Liman Operasyonları"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-500"

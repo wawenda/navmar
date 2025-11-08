@@ -11,32 +11,32 @@ interface Slide {
 
 const slides: Slide[] = [
   {
-    image: "/ship-1.jpeg",
+    image: "/gallery/ship-1.jpg",
     title: "Profesyonel Gemi Acenteliği",
     description: "Denizcilik sektöründe güvenilir çözüm ortağınız",
   },
   {
-    image: "/ship-2.jpeg",
+    image: "/gallery/ship-3.jpeg",
     title: "Liman Operasyonları",
     description: "Türkiye'nin önde gelen limanlarında kesintisiz hizmet",
   },
   {
-    image: "/ship-3.jpeg",
+    image: "/gallery/ship-4.jpeg",
     title: "7/24 Destek",
     description: "Her an ulaşılabilir, her zaman çözüm odaklı",
   },
   {
-    image: "/ship-4.jpeg",
+    image: "/gallery/ship-5.jpeg",
     title: "Gümrük ve Evrak Hizmetleri",
     description: "Hızlı ve eksiksiz dokümantasyon desteği",
   },
   {
-    image: "/ship-5.jpeg",
+    image: "/gallery/ship-6.jpeg",
     title: "Yakıt ve Tedarik",
     description: "Gemileriniz için tüm tedarik ihtiyaçları",
   },
   {
-    image: "/ship-6.jpeg",
+    image: "/gallery/ship-7.jpeg",
     title: "Deneyimli Ekip",
     description: "Uzman kadromuzla profesyonel hizmet",
   },

@@ -6,17 +6,20 @@ import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const slideImages = [
-  "/ship-1.jpeg",
-  "/ship-2.jpeg",
-  "/ship-3.jpeg",
-  "/ship-4.jpeg",
-  "/ship-5.jpeg",
+  "/gallery/ship-1.jpg",
+  "/gallery/ship-3.jpeg",
+  "/gallery/ship-4.jpeg",
+  "/gallery/ship-5.jpeg",
+  "/gallery/ship-6.jpeg",
+  "/gallery/ship-7.jpeg",
 ];
 
 export default function HeroSlider() {
   const { locale, t } = useLanguage();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
   // Get slides from translations
   const getSlides = () => {
@@ -69,10 +72,42 @@ export default function HeroSlider() {
     setTimeout(() => setIsAutoPlaying(true), 10000);
   };
 
+  // Minimum swipe distance (in px)
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      nextSlide();
+    }
+    if (isRightSwipe) {
+      prevSlide();
+    }
+  };
+
   if (slides.length === 0) return null;
 
   return (
-    <section className="relative w-full h-[500px] md:h-[600px] overflow-hidden mt-20">
+    <section 
+      className="relative w-full h-[500px] md:h-[600px] overflow-hidden mt-20"
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
+    >
       {/* Slides */}
       {slides.map((slide, index) => (
         <div
@@ -141,10 +176,10 @@ export default function HeroSlider() {
         </div>
       </div>
 
-      {/* Navigation Arrows */}
+      {/* Navigation Arrows - Hidden on mobile */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white p-4 rounded-full transition-all duration-200 z-10 hover:scale-110"
+        className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white p-4 rounded-full transition-all duration-200 z-10 hover:scale-110 items-center justify-center"
         aria-label={t('home.hero.ariaLabels.prevSlide')}
       >
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -154,7 +189,7 @@ export default function HeroSlider() {
 
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white p-4 rounded-full transition-all duration-200 z-10 hover:scale-110"
+        className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white p-4 rounded-full transition-all duration-200 z-10 hover:scale-110 items-center justify-center"
         aria-label={t('home.hero.ariaLabels.nextSlide')}
       >
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
