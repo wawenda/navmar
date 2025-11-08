@@ -1,26 +1,19 @@
-import type { Metadata } from "next";
-import ContactForm from "@/components/ContactForm";
+'use client';
 
-export const metadata: Metadata = {
-  title: "İletişim",
-  description:
-    "Navmar Agency ile iletişime geçin. Gemi acenteliği hizmetleri için 7/24 ulaşılabilir profesyonel ekibimiz size yardımcı olmaya hazır.",
-  openGraph: {
-    title: "İletişim | Navmar Agency",
-    description:
-      "Navmar Agency ile iletişime geçin. 7/24 ulaşılabilir profesyonel ekibimiz size yardımcı olmaya hazır.",
-  },
-};
+import ContactForm from "@/components/ContactForm";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Iletisim() {
+  const { locale, t } = useLanguage();
+  
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary via-primary to-primary/90 text-white py-12 pt-28">
+      <section className="bg-gradient-to-br from-primary via-primary to-primary/90 text-white py-12 pt-30">
         <div className="max-w-6xl mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-3">Bize Ulaşın</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-3">{t('contact.title')}</h1>
           <p className="text-lg text-white/80 max-w-2xl mx-auto">
-            Sorularınız için 7/24 hizmetinizdeyiz
+            {t('contact.subtitle')}
           </p>
         </div>
       </section>
@@ -33,7 +26,7 @@ export default function Iletisim() {
             {/* Left */}
             <div className="flex flex-col h-full">
               <h2 className="text-xl font-bold text-primary mb-4">
-                İletişim Bilgileri
+                {t('contact.info.title')}
               </h2>
               <div className="space-y-3 flex-1">
                 {/* Phone 1 / WhatsApp */}
@@ -58,13 +51,13 @@ export default function Iletisim() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-xs text-gray-500 uppercase tracking-wider mb-0.5">
-                      Telefon / WhatsApp
+                      {t('contact.info.phone')}
                     </p>
                     <p className="font-semibold text-primary text-sm">
                       +90 (505) 645 31 19
                     </p>
                     <p className="text-xs text-accent font-medium">
-                      WhatsApp Hattı
+                      {t('contact.info.whatsapp')}
                     </p>
                   </div>
                 </a>
@@ -91,46 +84,76 @@ export default function Iletisim() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-xs text-gray-500 uppercase tracking-wider mb-0.5">
-                      Telefon
+                      {t('contact.info.phone247')}
                     </p>
                     <p className="font-semibold text-primary text-sm">
                       +90 (545) 547 60 13
                     </p>
                     <p className="text-xs text-accent font-medium">
-                      7/24 Kesintisiz Hizmet
+                      {t('contact.info.service247')}
                     </p>
                   </div>
                 </a>
 
                 {/* Email */}
-                <a
-                  href="mailto:info@navmaragency.com"
-                  className="flex items-start gap-3 p-4 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors group border border-slate-200"
-                >
-                  <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                    <svg
-                      className="w-5 h-5 text-accent"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                      />
-                    </svg>
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-xs text-gray-500 uppercase tracking-wider mb-0.5">
-                      E-posta
-                    </p>
-                    <p className="font-semibold text-primary text-sm break-all">
-                      info@navmaragency.com
-                    </p>
-                  </div>
-                </a>
+                <div className="flex flex-col gap-3">
+                  <a
+                    href="mailto:info@navmaragency.com"
+                    className="flex items-start gap-3 p-4 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors group border border-slate-200"
+                  >
+                    <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                      <svg
+                        className="w-5 h-5 text-accent"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                        />
+                      </svg>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-xs text-gray-500 uppercase tracking-wider mb-0.5">
+                        {t('contact.info.email')}
+                      </p>
+                      <p className="font-semibold text-primary text-sm break-all">
+                        info@navmaragency.com
+                      </p>
+                    </div>
+                  </a>
+                  <a
+                    href="mailto:navmar@navmaragency.com"
+                    className="flex items-start gap-3 p-4 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors group border border-slate-200"
+                  >
+                    <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                      <svg
+                        className="w-5 h-5 text-accent"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                        />
+                      </svg>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-xs text-gray-500 uppercase tracking-wider mb-0.5">
+                        {t('contact.info.email')}
+                      </p>
+                      <p className="font-semibold text-primary text-sm break-all">
+                        navmar@navmaragency.com
+                      </p>
+                    </div>
+                  </a>
+                </div>
 
                 {/* Address */}
                 <div className="flex items-start gap-3 p-4 bg-slate-50 rounded-lg border border-slate-200">
@@ -157,12 +180,13 @@ export default function Iletisim() {
                   </div>
                   <div className="flex-1">
                     <p className="text-xs text-gray-500 uppercase tracking-wider mb-0.5">
-                      Adres
+                      {t('contact.info.address')}
                     </p>
                     <p className="text-primary font-semibold text-sm">
-                      Mustafa Kemal Mahallesi
+                      Mustafa Kemal {t('footer.district')}
                     </p>
-                    <p className="text-xs text-gray-600">İbrahim Karaoğlanoğlu Cd. No: 192</p>
+                    <p className="text-xs text-gray-600">İbrahim Karaoğlanoğlu Cd. No: 192/1</p>
+                    <p className="text-xs text-gray-600">Amanos Rezidans</p>
                     <p className="text-xs text-gray-600">
                       31200 İskenderun / Hatay
                     </p>
@@ -188,7 +212,7 @@ export default function Iletisim() {
                   </div>
                   <div className="flex-1">
                     <p className="text-xs text-gray-500 uppercase tracking-wider mb-1.5">
-                      Sosyal Medya
+                      {t('contact.info.social')}
                     </p>
                     <div className="flex flex-wrap gap-2">
                       <a
@@ -247,11 +271,11 @@ export default function Iletisim() {
                   </div>
                   <div className="flex-1">
                     <p className="text-xs text-gray-500 uppercase tracking-wider mb-0.5">
-                      Çalışma Saatleri
+                      {t('contact.info.hours')}
                     </p>
                     <p className="text-xl font-bold text-accent">7/24</p>
                     <p className="text-xs text-gray-600">
-                      Kesintisiz Hizmet
+                      {t('contact.info.nonStop')}
                     </p>
                   </div>
                 </div>
@@ -261,11 +285,11 @@ export default function Iletisim() {
             {/* Right */}
             <div className="flex flex-col h-full">
               <h2 className="text-xl font-bold text-primary mb-4">
-                Konumumuz
+                {t('contact.location.title')}
               </h2>
               <div className="relative rounded-xl overflow-hidden shadow-lg border border-slate-200 flex-1 min-h-[350px]">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3204.5318360554534!2d36.15447237632757!3d36.56539968089937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x152f58c05771ccf7%3A0x7c95001870f70e45!2sMustafa%20Kemal%2C%20%C4%B0brahim%20Karao%C4%9Flano%C4%9Flu%20Cd.%20No%3A192%2C%2031200%20%C4%B0skenderun%2FHatay!5e0!3m2!1str!2str!4v1762362264761!5m2!1str!2str" 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1706.6114887040656!2d36.1559786476786!3d36.55940546728443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x152f58be0c28cfc9%3A0xb0f30cfa228db57c!2sMustafa%20Kemal%2C%20%C4%B0brahim%20Karao%C4%9Flano%C4%9Flu%20Cd.%20No%3A192%2C%2031200%20%C4%B0skenderun%2FHatay!5e0!3m2!1str!2str!4v1762608003263!5m2!1str!2str" 
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }}
@@ -283,10 +307,10 @@ export default function Iletisim() {
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-6">
                 <h2 className="text-2xl font-bold text-primary mb-2">
-                  Mesaj Gönderin
+                  {t('contact.form.title')}
                 </h2>
                 <p className="text-gray-600 text-sm">
-                  En kısa sürede size geri dönüş yapacağız
+                  {t('contact.form.subtitle')}
                 </p>
               </div>
               <ContactForm />

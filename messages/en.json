@@ -1,0 +1,81 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "ports": "Ports",
+    "about": "About Us",
+    "contact": "Contact",
+    "language": "Language"
+  },
+  "home": {
+    "features": {
+      "service247": "Non-Stop Service",
+      "operations": "Successful Operations",
+      "ports": "Active Ports",
+      "experience": "Years Experience"
+    },
+    "services": {
+      "title": "Our Services",
+      "subtitle": "All professional services you need in the maritime sector",
+      "viewAll": "View All Services",
+      "shipAgency": {
+        "title": "Ship Agency",
+        "description": "Reliable and fast agency services for all your ship operations."
+      },
+      "portOperations": {
+        "title": "Port Operations",
+        "description": "Managing your port processes seamlessly and efficiently."
+      },
+      "customs": {
+        "title": "Customs & Documentation",
+        "description": "Handling your customs procedures quickly and tracking your documentation."
+      },
+      "fuelSupply": {
+        "title": "Fuel & Supply",
+        "description": "Providing fuel supply and all necessary provisions for vessels."
+      }
+    },
+    "whyUs": {
+      "title": "Why Navmar Agency?",
+      "service247": {
+        "title": "7/24 Service",
+        "description": "Always available, providing non-stop support."
+      },
+      "experiencedTeam": {
+        "title": "Experienced Team",
+        "description": "Expert and experienced professionals in the maritime sector."
+      },
+      "fastSolutions": {
+        "title": "Fast Solutions",
+        "description": "Providing fast and effective solutions for emergencies."
+      }
+    },
+    "gallery": {
+      "title": "Gallery",
+      "subtitle": "Images from our maritime operations"
+    },
+    "cta": {
+      "title": "Contact Us for Your Maritime Operations",
+      "subtitle": "We are ready to provide customized solutions. Contact us for detailed information.",
+      "button": "Contact Form"
+    }
+  },
+  "footer": {
+    "description": "Professional ship agency and husbandry services in İskenderun and Mersin Ports.",
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "address": "Address",
+    "district": "District",
+    "country": "Turkey",
+    "service247": "7/24 Service",
+    "nonStopService": "7/24 Non-Stop Service",
+    "allRightsReserved": "All rights reserved",
+    "portsFooter": "İskenderun & Mersin Ports"
+  },
+  "brand": {
+    "name": "NAVMAR",
+    "tagline": "Shipping Agency"
+  }
+}
+
+

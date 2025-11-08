@@ -1,167 +1,77 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 const references = [
   {
     name: 'İSDEMİR',
     description: 'Demir Çelik Sanayi',
-    logo: (
-      <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-800 rounded-lg">
-        <div className="text-white text-center">
-          <div className="text-3xl font-black tracking-wider">İSDEMİR</div>
-          <div className="text-xs mt-1 opacity-90">Demir Çelik A.Ş.</div>
-        </div>
-      </div>
-    ),
+    logo: '/references/isdemir.jpg',
   },
   {
     name: 'ERDEMİR',
     description: 'Ereğli Demir Çelik',
-    logo: (
-      <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-700 to-blue-900 rounded-lg">
-        <div className="text-white text-center">
-          <div className="text-3xl font-black tracking-wider">ERDEMİR</div>
-          <div className="text-xs mt-1 opacity-90">Ereğli Demir Çelik</div>
-        </div>
-      </div>
-    ),
-  },
-  {
-    name: 'YAZICIOĞLU',
-    description: 'Gıda Sanayi',
-    logo: (
-      <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-green-600 to-green-800 rounded-lg">
-        <div className="text-white text-center">
-          <div className="text-2xl font-bold">YAZICIOĞLU</div>
-          <div className="text-xs mt-1 opacity-90">Gıda Sanayi</div>
-        </div>
-      </div>
-    ),
-  },
+    logo: '/references/erdemir.png',
+  }
 ];
 
 export default function ReferencesCarousel() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-
-  useEffect(() => {
-    if (!isAutoPlaying) return;
-
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % references.length);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, [isAutoPlaying]);
-
-  const goToSlide = (index: number) => {
-    setCurrentIndex(index);
-    setIsAutoPlaying(false);
-    setTimeout(() => setIsAutoPlaying(true), 5000);
-  };
-
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % references.length);
-    setIsAutoPlaying(false);
-    setTimeout(() => setIsAutoPlaying(true), 5000);
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + references.length) % references.length);
-    setIsAutoPlaying(false);
-    setTimeout(() => setIsAutoPlaying(true), 5000);
-  };
-
   return (
-    <div className="relative">
-      {/* Carousel Container */}
-      <div className="relative overflow-hidden rounded-2xl bg-white border-2 border-slate-200 shadow-xl">
-        {/* Slides */}
-        <div
-          className="flex transition-transform duration-500 ease-in-out"
-          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-        >
-          {references.map((reference, index) => (
-            <div
-              key={index}
-              className="min-w-full flex items-center justify-center p-12 md:p-16"
-            >
-              <div className="w-64 h-40 md:w-80 md:h-48">
-                {reference.logo}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Navigation Arrows */}
-        <button
-          onClick={prevSlide}
-          className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 hover:bg-white shadow-lg flex items-center justify-center transition-all hover:scale-110 group"
-          aria-label="Önceki referans"
-        >
-          <svg
-            className="w-5 h-5 text-primary group-hover:text-accent"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M15 19l-7-7 7-7"
-            />
-          </svg>
-        </button>
-
-        <button
-          onClick={nextSlide}
-          className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 hover:bg-white shadow-lg flex items-center justify-center transition-all hover:scale-110 group"
-          aria-label="Sonraki referans"
-        >
-          <svg
-            className="w-5 h-5 text-primary group-hover:text-accent"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M9 5l7 7-7 7"
-            />
-          </svg>
-        </button>
-      </div>
-
-      {/* Dots Indicator */}
-      <div className="flex justify-center gap-2 mt-6">
-        {references.map((_, index) => (
-          <button
+    <div className="w-full py-8 overflow-hidden">
+      {/* References Grid */}
+      <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-20 px-4">
+        {references.map((reference, index) => (
+          <div
             key={index}
-            onClick={() => goToSlide(index)}
-            className={`transition-all duration-300 rounded-full ${
-              index === currentIndex
-                ? 'w-8 h-3 bg-accent'
-                : 'w-3 h-3 bg-gray-300 hover:bg-gray-400'
-            }`}
-            aria-label={`Referans ${index + 1}'e git`}
-          />
+            className="group relative"
+          >
+            {/* Circular Logo Container */}
+            <div className="relative w-56 h-56 md:w-64 md:h-64 lg:w-72 lg:h-72">
+              {/* Animated Border Ring */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary via-accent to-primary opacity-20 group-hover:opacity-40 transition-opacity duration-500 blur-xl"></div>
+              
+              {/* Logo Circle */}
+              <div className="relative w-full h-full rounded-full bg-white shadow-2xl group-hover:shadow-accent/30 transition-all duration-500 border-4 border-slate-100 group-hover:border-accent/20 overflow-hidden group-hover:scale-105 transform">
+                {/* Background Pattern */}
+                <div className="absolute inset-0 bg-gradient-to-br from-slate-50 to-white opacity-50"></div>
+                
+                {/* Logo Image */}
+                <div className="relative w-full h-full p-10 md:p-12 flex items-center justify-center">
+                  <Image
+                    src={reference.logo}
+                    alt={reference.name}
+                    fill
+                    className="object-contain p-8 md:p-10"
+                    sizes="(max-width: 768px) 224px, (max-width: 1024px) 256px, 288px"
+                  />
+                </div>
+
+                {/* Shine Effect on Hover */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500 transform -translate-x-full group-hover:translate-x-full"></div>
+              </div>
+
+              {/* Decorative Dots */}
+              <div className="absolute -top-2 -right-2 w-4 h-4 bg-accent rounded-full animate-pulse"></div>
+              <div className="absolute -bottom-2 -left-2 w-3 h-3 bg-primary rounded-full animate-pulse delay-75"></div>
+            </div>
+
+            {/* Company Info */}
+            <div className="mt-6 text-center">
+              <h3 className="text-xl md:text-2xl font-bold text-primary mb-2 group-hover:text-accent transition-colors duration-300">
+                {reference.name}
+              </h3>
+              <p className="text-sm md:text-base text-gray-600">
+                {reference.description}
+              </p>
+            </div>
+          </div>
         ))}
       </div>
 
-      {/* Company Names Below */}
-      <div className="mt-4 text-center">
-        <p className="text-lg font-semibold text-primary">
-          {references[currentIndex].name}
-        </p>
-        <p className="text-sm text-gray-600">
-          {references[currentIndex].description}
-        </p>
+      {/* Decorative Line */}
+      <div className="flex items-center justify-center mt-12">
+        <div className="h-1 w-24 bg-gradient-to-r from-transparent via-accent to-transparent rounded-full"></div>
       </div>
     </div>
   );
 }
-

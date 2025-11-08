@@ -1,8 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function ContactForm() {
+  const { t } = useLanguage();
   const [result, setResult] = useState("");
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -73,7 +75,7 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         <div>
           <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
-            İsim Soyisim <span className="text-red-500">*</span>
+            {t('contact.form.name')} <span className="text-red-500">*</span>
           </label>
           <input
             type="text"
@@ -81,13 +83,13 @@ export default function ContactForm() {
             name="name"
             required
             className="w-full px-4 py-3 bg-white border-2 border-slate-200 rounded-xl focus:ring-2 focus:ring-accent/50 focus:border-accent outline-none transition-all"
-            placeholder="Adınız Soyadınız"
+            placeholder={t('contact.form.namePlaceholder')}
           />
         </div>
 
         <div>
           <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-            E-posta <span className="text-red-500">*</span>
+            {t('contact.form.email')} <span className="text-red-500">*</span>
           </label>
           <input
             type="email"
@@ -95,27 +97,27 @@ export default function ContactForm() {
             name="email"
             required
             className="w-full px-4 py-3 bg-white border-2 border-slate-200 rounded-xl focus:ring-2 focus:ring-accent/50 focus:border-accent outline-none transition-all"
-            placeholder="ornek@email.com"
+            placeholder={t('contact.form.emailPlaceholder')}
           />
         </div>
       </div>
 
       <div>
         <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
-          Telefon
+          {t('contact.form.phone')}
         </label>
         <input
           type="tel"
           id="phone"
           name="phone"
           className="w-full px-4 py-3 bg-white border-2 border-slate-200 rounded-xl focus:ring-2 focus:ring-accent/50 focus:border-accent outline-none transition-all"
-          placeholder="+90 (5xx) xxx xx xx"
+          placeholder={t('contact.form.phonePlaceholder')}
         />
       </div>
 
       <div>
         <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
-          Mesajınız <span className="text-red-500">*</span>
+          {t('contact.form.message')} <span className="text-red-500">*</span>
         </label>
         <textarea
           id="message"
@@ -123,7 +125,7 @@ export default function ContactForm() {
           required
           rows={5}
           className="w-full px-4 py-3 bg-white border-2 border-slate-200 rounded-xl focus:ring-2 focus:ring-accent/50 focus:border-accent outline-none transition-all resize-none"
-          placeholder="Mesajınızı buraya yazın..."
+          placeholder={t('contact.form.messagePlaceholder')}
         />
       </div>
 
@@ -140,7 +142,7 @@ export default function ContactForm() {
           <svg className="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
           </svg>
-          <span className="font-medium">Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.</span>
+          <span className="font-medium">{t('contact.form.successMessage')}</span>
         </div>
       )}
 
@@ -150,7 +152,7 @@ export default function ContactForm() {
             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
           </svg>
           <div>
-            <p className="font-medium">Mesaj gönderilemedi</p>
+            <p className="font-medium">{t('contact.form.errorMessage')}</p>
             {errorMessage && <p className="text-sm mt-1">{errorMessage}</p>}
           </div>
         </div>
@@ -168,14 +170,14 @@ export default function ContactForm() {
                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
               </svg>
-              Gönderiliyor...
+              {t('contact.form.sending')}
             </>
           ) : (
             <>
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
               </svg>
-              Mesaj Gönder
+              {t('contact.form.submit')}
             </>
           )}
         </span>

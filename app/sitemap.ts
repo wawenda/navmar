@@ -1,40 +1,32 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://navmaragency.com'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://navmaragency.com'
+  const locales = ['tr', 'en']
+  const routes = ['', 'hizmetler', 'limanlar', 'hakkimizda', 'iletisim']
   
-  return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/hizmetler`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/limanlar`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/hakkimizda`,
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/iletisim`,
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.7,
-    },
-  ]
+  const urls: MetadataRoute.Sitemap = []
+  
+  locales.forEach(locale => {
+    routes.forEach(route => {
+      const url = route === '' ? `${baseUrl}/${locale}` : `${baseUrl}/${locale}/${route}`
+      urls.push({
+        url,
+        lastModified: new Date(),
+        changeFrequency: route === '' || route === 'hizmetler' || route === 'limanlar' ? 'monthly' : 'yearly',
+        priority: route === '' ? 1 : route === 'hizmetler' || route === 'limanlar' ? 0.8 : route === 'iletisim' ? 0.7 : 0.6,
+        alternates: {
+          languages: {
+            tr: route === '' ? `${baseUrl}/tr` : `${baseUrl}/tr/${route}`,
+            en: route === '' ? `${baseUrl}/en` : `${baseUrl}/en/${route}`,
+            'x-default': route === '' ? `${baseUrl}/tr` : `${baseUrl}/tr/${route}`,
+          },
+        },
+      })
+    })
+  })
+  
+  return urls
 }
 
 

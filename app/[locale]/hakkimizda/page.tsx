@@ -1,19 +1,13 @@
-import type { Metadata } from "next";
+'use client';
+
+import Link from "next/link";
 import Image from "next/image";
 import ReferencesCarousel from "@/components/ReferencesCarousel";
-
-export const metadata: Metadata = {
-  title: "Hakkımızda",
-  description:
-    "NAVMAR Gemi Acenteliği, İskenderun Limanı'nda yılların tecrübesi ile güvenilir husbandry hizmetleri sunan profesyonel bir şirkettir. 7/24 kesintisiz destek.",
-  openGraph: {
-    title: "Hakkımızda | Navmar Agency",
-    description:
-      "NAVMAR Gemi Acenteliği, İskenderun Limanı'nda yılların tecrübesi ile güvenilir husbandry hizmetleri sunan profesyonel bir şirkettir.",
-  },
-};
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Hakkimizda() {
+  const { locale, t } = useLanguage();
+  
   const values = [
     {
       icon: (
@@ -26,9 +20,7 @@ export default function Hakkimizda() {
           />
         </svg>
       ),
-      title: "Misyonumuz",
-      description:
-        "Denizcilik sektöründe faaliyet gösteren şirketlere en yüksek kalitede gemi acenteliği hizmetleri sunarak, operasyonlarını sorunsuz ve verimli bir şekilde yürütmelerine destek olmak. Müşterilerimizin güvenini kazanmak ve uzun vadeli iş ortaklıkları kurmak.",
+      key: 'mission',
     },
     {
       icon: (
@@ -47,9 +39,7 @@ export default function Hakkimizda() {
           />
         </svg>
       ),
-      title: "Vizyonumuz",
-      description:
-        "Türkiye'nin önde gelen gemi acenteliği şirketlerinden biri olmak ve uluslararası denizcilik endüstrisinde güvenilir bir ortak olarak tanınmak. İnovasyon ve sürekli gelişim odaklı yaklaşımımızla sektörde referans bir şirket haline gelmek.",
+      key: 'vision',
     },
     {
       icon: (
@@ -62,17 +52,24 @@ export default function Hakkimizda() {
           />
         </svg>
       ),
-      title: "Değerlerimiz",
-      description:
-        "Güvenilirlik, profesyonellik, şeffaflık ve müşteri memnuniyeti temel değerlerimizdir. 7/24 kesintisiz iletişim, hızlı çözüm üretme yeteneği ve etik iş anlayışımızla fark yaratıyoruz. Çalışanlarımıza değer verir, sürdürülebilir büyümeye inanırız.",
+      key: 'values',
     },
   ];
 
   const stats = [
-    { number: "15+", label: "Yıllık Tecrübe" },
-    { number: "500+", label: "Başarılı Operasyon" },
-    { number: "İSK", label: "İskenderun Limanı" },
-    { number: "7/24", label: "Kesintisiz Hizmet" },
+    { number: "15+", key: 'years' },
+    { number: "500+", key: 'operations' },
+    { number: "İSK", key: 'port' },
+    { number: "7/24", key: 'service247' },
+  ];
+
+  const whyUsItems = [
+    { key: 'experienced' },
+    { key: 'communication' },
+    { key: 'expertise' },
+    { key: 'reliability' },
+    { key: 'speed' },
+    { key: 'comprehensive' },
   ];
 
   return (
@@ -80,9 +77,9 @@ export default function Hakkimizda() {
       {/* Hero Section */}
       <section className="bg-primary text-white py-16 pt-32">
         <div className="max-w-6xl mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Hakkımızda</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">{t('about.title')}</h1>
           <p className="text-xl text-white/90 max-w-3xl mx-auto">
-            Denizcilik sektöründe güvenilir çözüm ortağınız
+            {t('about.subtitle')}
           </p>
         </div>
       </section>
@@ -93,28 +90,21 @@ export default function Hakkimizda() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
               <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
-                NAVMAR Gemi Acenteliği
+                {t('about.company.name')}
               </h2>
               <div className="space-y-4 text-gray-700 leading-relaxed">
                 <p>
-                  <strong className="text-primary">NAVMAR Gemi Acenteliği</strong>, denizcilik sektöründe 
-                  yılların verdiği tecrübe ve birikimle hizmet veren profesyonel bir gemi acenteliği şirketidir. 
-                  İskenderun Limanı&apos;nda kesintisiz operasyon yürütüyoruz.
+                  <strong className="text-primary">{t('about.company.name')}</strong>, {t('about.company.description1')}
                 </p>
                 <p>
-                  Müşterilerimize en yüksek kalitede husbandry hizmetleri sunmak ve onların denizcilik operasyonlarını 
-                  sorunsuz bir şekilde gerçekleştirmelerine yardımcı olmak için kurulduk. Deneyimli ekibimiz, 
-                  güçlü yerel bağlantılarımız ve 7/24 kesintisiz iletişim altyapımız ile sektörde fark yaratıyoruz.
+                  {t('about.company.description2')}
                 </p>
                 <p>
-                  Tayfa değişimi, kumanya ikmali, yedek parça gümrük prosedürleri, seyir neşriyatları temini, 
-                  yakıt ve nakit tedariki, atık alımı gibi tüm husbandry hizmetlerinde kapsamlı çözümler sunuyoruz. 
-                  Her müşterimizin özel ihtiyaçlarını anlayarak, onlara özel çözümler geliştiriyoruz.
+                  {t('about.company.description3')}
                 </p>
                 <p>
-                  <strong className="text-accent">Güvenilirlik, profesyonellik ve müşteri memnuniyeti</strong> 
-                  {" "}bizim için en önemli ilkelerdir. Bu değerlerle hareket ederek, müşterilerimizle 
-                  uzun vadeli ve karşılıklı güvene dayalı iş ortaklıkları kuruyoruz.
+                  <strong className="text-accent">{t('about.mission.values.description').split('.')[0]}</strong>
+                  {" "}{t('about.company.description4')}
                 </p>
               </div>
             </div>
@@ -138,7 +128,7 @@ export default function Hakkimizda() {
                     {stat.number}
                   </div>
                   <div className="text-sm text-gray-600 font-medium">
-                    {stat.label}
+                    {t(`about.stats.${stat.key}`)}
                   </div>
                 </div>
               ))}
@@ -153,10 +143,10 @@ export default function Hakkimizda() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-              Misyon, Vizyon ve Değerlerimiz
+              {t('about.mission.title')}
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Bizi yönlendiren ilkeler ve hedeflerimiz
+              {t('about.mission.subtitle')}
             </p>
           </div>
 
@@ -168,10 +158,10 @@ export default function Hakkimizda() {
               >
                 <div className="text-accent mb-4">{value.icon}</div>
                 <h3 className="text-2xl font-bold text-primary mb-4">
-                  {value.title}
+                  {t(`about.mission.${value.key}.title`)}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  {value.description}
+                  {t(`about.mission.${value.key}.description`)}
                 </p>
               </div>
             ))}
@@ -180,24 +170,22 @@ export default function Hakkimizda() {
       </section>
 
       {/* References Section */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-12">
+      <section className="py-16 md:py-24 bg-gradient-to-b from-white to-slate-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-              Referanslarımız
+              {t('about.references.title')}
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Güvenilirliğimizi kanıtlayan, birlikte çalıştığımız prestijli şirketler
+              {t('about.references.subtitle')}
             </p>
           </div>
           
-          <div className="max-w-4xl mx-auto">
-            <ReferencesCarousel />
-          </div>
+          <ReferencesCarousel />
 
-          <div className="text-center mt-12 pt-8 border-t border-slate-200">
-            <p className="text-gray-600 italic">
-              &quot;Güvenilir iş ortaklıklarımızla denizcilik sektöründe fark yaratıyoruz&quot;
+          <div className="text-center mt-16 pt-8 border-t border-slate-200 max-w-4xl mx-auto">
+            <p className="text-gray-600 italic text-lg">
+              &quot;{t('about.references.quote')}&quot;
             </p>
           </div>
         </div>
@@ -208,43 +196,12 @@ export default function Hakkimizda() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-              Neden Bizi Tercih Etmelisiniz?
+              {t('about.whyUs.title')}
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              {
-                title: "Deneyimli Ekip",
-                description:
-                  "Sektörde yılların verdiği bilgi ve tecrübeye sahip profesyonel kadromuz.",
-              },
-              {
-                title: "7/24 İletişim",
-                description:
-                  "Günün her saati ulaşılabilir olmak ve anında çözüm üretmek.",
-              },
-              {
-                title: "İskenderun Limanı Uzmanlığı",
-                description:
-                  "İskenderun Limanı'nda derin bilgi ve deneyimle kesintisiz hizmet.",
-              },
-              {
-                title: "Güvenilirlik",
-                description:
-                  "Şeffaf ve dürüst iş anlayışımızla uzun vadeli ortaklıklar.",
-              },
-              {
-                title: "Hızlı Çözümler",
-                description:
-                  "Acil durumlar için etkili ve hızlı aksiyon alma yeteneği.",
-              },
-              {
-                title: "Kapsamlı Hizmetler",
-                description:
-                  "Denizcilik operasyonlarınız için ihtiyaç duyduğunuz tüm hizmetler.",
-              },
-            ].map((item, index) => (
+            {whyUsItems.map((item, index) => (
               <div
                 key={index}
                 className="flex items-start space-x-4 bg-slate-50 rounded-xl p-6 border border-slate-100"
@@ -266,9 +223,9 @@ export default function Hakkimizda() {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-primary mb-1">
-                    {item.title}
+                    {t(`about.whyUs.items.${item.key}.title`)}
                   </h3>
-                  <p className="text-gray-600 text-sm">{item.description}</p>
+                  <p className="text-gray-600 text-sm">{t(`about.whyUs.items.${item.key}.description`)}</p>
                 </div>
               </div>
             ))}
@@ -280,21 +237,19 @@ export default function Hakkimizda() {
       <section className="py-16 bg-primary text-white">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Bizimle Çalışmak İster misiniz?
+            {t('about.cta.title')}
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Denizcilik operasyonlarınız için güvenilir bir ortak arıyorsanız, doğru yerdesiniz
+            {t('about.cta.subtitle')}
           </p>
-          <a
-            href="/iletisim"
+          <Link
+            href={`/${locale}/iletisim`}
             className="inline-block bg-accent text-primary px-8 py-4 rounded-lg font-semibold text-lg hover:bg-accent-hover transition-colors duration-200 shadow-lg"
           >
-            İletişime Geçin
-          </a>
+            {t('about.cta.button')}
+          </Link>
         </div>
       </section>
     </>
   );
 }
-
-

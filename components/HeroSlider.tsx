@@ -3,60 +3,53 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-interface Slide {
-  image: string;
-  title: string;
-  subtitle: string;
-  description: string;
-}
-
-const slides: Slide[] = [
-  {
-    image: "/ship-1.jpeg",
-    title: "Güvenle Demir Atın",
-    subtitle: "Profesyonel Gemi Acenteliği Hizmetleri",
-    description: "Denizcilik İşlemlerinizde Yanınızdayız",
-  },
-  {
-    image: "/ship-2.jpeg",
-    title: "7/24 Kesintisiz Hizmet",
-    subtitle: "Her An Ulaşılabilir, Her Zaman Çözüm Odaklı",
-    description: "Türkiye'nin Önde Gelen Limanlarında",
-  },
-  {
-    image: "/ship-3.jpeg",
-    title: "Deneyimli Ekip",
-    subtitle: "Yılların Verdiği Tecrübe",
-    description: "Profesyonel Denizcilik Çözümleri",
-  },
-  {
-    image: "/ship-4.jpeg",
-    title: "Liman Operasyonları",
-    subtitle: "Sorunsuz ve Hızlı İşlemler",
-    description: "Tüm Gemi Operasyonlarınız İçin",
-  },
-  {
-    image: "/ship-5.jpeg",
-    title: "Gümrük ve Tedarik",
-    subtitle: "Eksiksiz Dokümantasyon",
-    description: "Yakıt, Malzeme ve Evrak Hizmetleri",
-  },
+const slideImages = [
+  "/ship-1.jpeg",
+  "/ship-2.jpeg",
+  "/ship-3.jpeg",
+  "/ship-4.jpeg",
+  "/ship-5.jpeg",
 ];
 
 export default function HeroSlider() {
+  const { locale, t } = useLanguage();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
+  // Get slides from translations
+  const getSlides = () => {
+    const slidesData = t('home.hero.slides');
+    if (Array.isArray(slidesData) && slidesData.length > 0) {
+      return slidesData.map((slide: any, index: number) => ({
+        image: slideImages[index] || slideImages[0],
+        title: slide?.title || '',
+        subtitle: slide?.subtitle || '',
+        description: slide?.description || '',
+      }));
+    }
+    // Fallback to default slides if translations not loaded yet
+    return [
+      { image: slideImages[0], title: '', subtitle: '', description: '' },
+      { image: slideImages[1], title: '', subtitle: '', description: '' },
+      { image: slideImages[2], title: '', subtitle: '', description: '' },
+      { image: slideImages[3], title: '', subtitle: '', description: '' },
+      { image: slideImages[4], title: '', subtitle: '', description: '' },
+    ];
+  };
+
+  const slides = getSlides();
+
   useEffect(() => {
-    if (!isAutoPlaying) return;
+    if (!isAutoPlaying || slides.length === 0) return;
 
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 6000); // 6 saniyede bir değişir
+    }, 6000);
 
     return () => clearInterval(interval);
-  }, [isAutoPlaying]);
+  }, [isAutoPlaying, slides.length]);
 
   const goToSlide = (index: number) => {
     setCurrentSlide(index);
@@ -76,8 +69,10 @@ export default function HeroSlider() {
     setTimeout(() => setIsAutoPlaying(true), 10000);
   };
 
+  if (slides.length === 0) return null;
+
   return (
-    <section className="relative w-full h-[500px] md:h-[600px] overflow-visible mt-20">
+    <section className="relative w-full h-[500px] md:h-[600px] overflow-hidden mt-20">
       {/* Slides */}
       {slides.map((slide, index) => (
         <div
@@ -107,7 +102,7 @@ export default function HeroSlider() {
               key={`title-${currentSlide}`}
               className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 animate-slide-up"
             >
-              {slides[currentSlide].title}
+              {slides[currentSlide]?.title}
             </h1>
           </div>
           
@@ -116,7 +111,7 @@ export default function HeroSlider() {
               key={`subtitle-${currentSlide}`}
               className="text-lg md:text-xl text-accent font-semibold mb-3 animate-slide-up-delay"
             >
-              {slides[currentSlide].subtitle}
+              {slides[currentSlide]?.subtitle}
             </p>
           </div>
           
@@ -125,22 +120,22 @@ export default function HeroSlider() {
               key={`desc-${currentSlide}`}
               className="text-base md:text-lg text-white/90 animate-slide-up-delay-2"
             >
-              {slides[currentSlide].description}
+              {slides[currentSlide]?.description}
             </p>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3 animate-fade-in-delay-3">
             <Link
-              href="/iletisim"
+              href={`/${locale}/iletisim`}
               className="inline-block bg-accent text-primary px-6 py-3 rounded-lg font-semibold hover:bg-accent-hover transition-all duration-200 shadow-xl hover:shadow-2xl hover:scale-105 text-center"
             >
-              Teklif Al
+              {t('home.hero.buttons.getQuote')}
             </Link>
             <Link
-              href="/hizmetler"
+              href={`/${locale}/hizmetler`}
               className="inline-block border-2 border-white/60 text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/10 hover:border-white transition-all duration-200 text-center"
             >
-              Hizmetlerimiz
+              {t('home.hero.buttons.services')}
             </Link>
           </div>
         </div>
@@ -150,7 +145,7 @@ export default function HeroSlider() {
       <button
         onClick={prevSlide}
         className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white p-4 rounded-full transition-all duration-200 z-10 hover:scale-110"
-        aria-label="Önceki slide"
+        aria-label={t('home.hero.ariaLabels.prevSlide')}
       >
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
@@ -160,7 +155,7 @@ export default function HeroSlider() {
       <button
         onClick={nextSlide}
         className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white p-4 rounded-full transition-all duration-200 z-10 hover:scale-110"
-        aria-label="Sonraki slide"
+        aria-label={t('home.hero.ariaLabels.nextSlide')}
       >
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
@@ -178,7 +173,7 @@ export default function HeroSlider() {
                 ? "bg-accent w-12 h-3"
                 : "bg-white/50 hover:bg-white/70 w-3 h-3"
             }`}
-            aria-label={`Slide ${index + 1}'e git`}
+            aria-label={t('home.hero.ariaLabels.goToSlide').replace('{index}', String(index + 1))}
           />
         ))}
       </div>
@@ -192,7 +187,6 @@ export default function HeroSlider() {
           fill="none" 
           xmlns="http://www.w3.org/2000/svg"
         >
-          {/* Smooth curved bottom edge */}
           <path 
             d="M0 20 Q150 0, 300 20 T600 20 T900 20 T1200 20 V40 H0 V20" 
             fill="white"
@@ -202,4 +196,3 @@ export default function HeroSlider() {
     </section>
   );
 }
-

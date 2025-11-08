@@ -9,7 +9,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 export default function Navbar() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { language, setLanguage, t } = useLanguage();
+  const { locale: language, setLocale: setLanguage, t } = useLanguage();
 
   const navigation = [
     { nameTR: "Ana Sayfa", nameEN: "Home", href: "/" },
@@ -19,57 +19,45 @@ export default function Navbar() {
     { nameTR: "İletişim", nameEN: "Contact", href: "/iletisim" },
   ];
 
+  // Helper function to add locale to href
+  const getLocalizedHref = (href: string) => {
+    return `/${language}${href === '/' ? '' : href}`;
+  };
+
+  // Helper function to check if current path matches nav item
+  const isActivePath = (href: string) => {
+    const localizedHref = `/${language}${href === '/' ? '' : href}`;
+    return pathname === localizedHref;
+  };
+
   return (
     <nav 
-      className="text-white fixed top-0 left-0 right-0 z-50 bg-primary shadow-lg"
+      className="text-white fixed top-0 left-0 right-0 z-50 bg-primary shadow-lg overflow-hidden"
     >
       <div className="max-w-6xl mx-auto px-4">
-        <div className="flex justify-between items-center h-20">
-          {/* Logo - Ship Design */}
+        <div className="flex justify-between items-center h-20 md:h-24">
+          {/* Logo - Simple Design */}
           <Link 
-            href="/" 
-            className="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/10 hover:border-accent/30 transition-all duration-300 group"
+            href={getLocalizedHref("/")}
+            className="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/15 hover:border-accent/50 transition-all duration-300 group relative z-10"
           >
-            {/* Ship Container with Logo */}
-            <div className="relative w-16 h-16 flex-shrink-0">
-              {/* Ship Silhouette Background */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <svg viewBox="0 0 100 100" className="w-full h-full opacity-20 group-hover:opacity-30 transition-opacity">
-                  {/* Ship body */}
-                  <path d="M20,70 L25,50 L30,50 L30,40 L70,40 L70,50 L75,50 L80,70 Z" 
-                        fill="currentColor" className="text-accent" />
-                  {/* Ship deck */}
-                  <path d="M35,40 L40,25 L60,25 L65,40 Z" 
-                        fill="currentColor" className="text-accent" />
-                  {/* Bridge */}
-                  <rect x="45" y="18" width="10" height="7" 
-                        fill="currentColor" className="text-accent" />
-                  {/* Waves */}
-                  <path d="M15,72 Q25,76 35,72 Q45,68 55,72 Q65,76 75,72 Q85,68 95,72" 
-                        stroke="currentColor" className="text-blue-300" strokeWidth="2" fill="none" opacity="0.4" />
-                </svg>
-              </div>
-              
-              {/* Logo in front */}
-              <div className="absolute inset-0 flex items-center justify-center z-10 p-2">
-                <div className="bg-white rounded-lg p-1.5 shadow-lg group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
-                  <Image
-                    src="/logo.png"
-                    alt="Navmar Agency"
-                    width={44}
-                    height={44}
-                    className="w-11 h-11 object-contain"
-                  />
-                </div>
-              </div>
+            {/* Logo Icon - With white background */}
+            <div className="bg-white p-1 md:p-1.5 rounded-lg shadow-xl group-hover:shadow-2xl transition-all duration-300 flex-shrink-0">
+              <Image
+                src="/logo.png"
+                alt="Navmar Agency"
+                width={64}
+                height={64}
+                className="transition-transform duration-300 group-hover:rotate-3 w-16 h-16 md:w-20 md:h-20 object-contain"
+              />
             </div>
             
-            {/* Brand Text */}
-            <div className="flex flex-col leading-tight">
-              <span className="text-xl md:text-2xl font-extrabold text-white tracking-tight whitespace-nowrap">
+            {/* Brand Text - Modern & Compact */}
+            <div className="hidden md:flex flex-col leading-none justify-center min-w-0">
+              <span className="text-lg md:text-xl font-extrabold text-white tracking-tight whitespace-nowrap">
                 NAVMAR
               </span>
-              <span className="text-[11px] md:text-xs font-semibold text-accent tracking-wider uppercase whitespace-nowrap">
+              <span className="text-[10px] md:text-xs font-bold text-accent tracking-wider uppercase whitespace-nowrap">
                 {language === 'tr' ? 'Gemi Acenteliği' : 'Shipping Agency'}
               </span>
             </div>
@@ -81,13 +69,13 @@ export default function Navbar() {
 
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1">
+          <div className="hidden lg:flex items-center space-x-1 flex-shrink-0">
             {navigation.map((item) => (
               <Link
                 key={item.href}
-                href={item.href}
+                href={getLocalizedHref(item.href)}
                 className={`px-4 py-2 rounded-lg transition-all duration-200 ${
-                  pathname === item.href
+                  isActivePath(item.href)
                     ? "bg-accent text-primary font-semibold"
                     : "text-white/90 hover:bg-white/10 hover:text-white"
                 }`}
@@ -106,7 +94,7 @@ export default function Navbar() {
                     : 'text-white/80 hover:text-white'
                 }`}
               >
-                <span className="text-base">🇹🇷</span>
+                <Image src="/flags/tr.svg" alt="TR" width={20} height={15} className="w-5 h-4" />
                 <span>TR</span>
               </button>
               <button
@@ -117,7 +105,7 @@ export default function Navbar() {
                     : 'text-white/80 hover:text-white'
                 }`}
               >
-                <span className="text-base">🇬🇧</span>
+                <Image src="/flags/en.svg" alt="EN" width={20} height={15} className="w-5 h-4" />
                 <span>EN</span>
               </button>
             </div>
@@ -125,7 +113,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 rounded-lg hover:bg-white/10"
+            className="lg:hidden p-2 rounded-lg hover:bg-white/10 flex-shrink-0"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Menu"
           >
@@ -156,13 +144,13 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden py-4 space-y-2">
+          <div className="lg:hidden py-4 space-y-2">
             {navigation.map((item) => (
               <Link
                 key={item.href}
-                href={item.href}
+                href={getLocalizedHref(item.href)}
                 className={`block px-4 py-2 rounded-lg transition-all duration-200 ${
-                  pathname === item.href
+                  isActivePath(item.href)
                     ? "bg-accent text-primary font-semibold"
                     : "text-white/90 hover:bg-white/10"
                 }`}
@@ -182,7 +170,7 @@ export default function Navbar() {
                     : 'bg-white/10 text-white/80'
                 }`}
               >
-                <span className="text-lg">🇹🇷</span>
+                <Image src="/flags/tr.svg" alt="TR" width={24} height={18} className="w-6 h-5" />
                 <span>Türkçe</span>
               </button>
               <button
@@ -193,7 +181,7 @@ export default function Navbar() {
                     : 'bg-white/10 text-white/80'
                 }`}
               >
-                <span className="text-lg">🇬🇧</span>
+                <Image src="/flags/en.svg" alt="EN" width={24} height={18} className="w-6 h-5" />
                 <span>English</span>
               </button>
             </div>

@@ -1,0 +1,81 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "services": "Hizmetler",
+    "ports": "Limanlar",
+    "about": "Hakkımızda",
+    "contact": "İletişim",
+    "language": "Dil"
+  },
+  "home": {
+    "features": {
+      "service247": "Kesintisiz Hizmet",
+      "operations": "Başarılı Operasyon",
+      "ports": "Aktif Liman",
+      "experience": "Yıllık Tecrübe"
+    },
+    "services": {
+      "title": "Hizmetlerimiz",
+      "subtitle": "Denizcilik sektöründe ihtiyacınız olan tüm profesyonel hizmetler",
+      "viewAll": "Tüm Hizmetleri Görüntüle",
+      "shipAgency": {
+        "title": "Gemi Acenteliği",
+        "description": "Tüm gemi işlemleriniz için güvenilir ve hızlı acentelik hizmetleri."
+      },
+      "portOperations": {
+        "title": "Liman Operasyonları",
+        "description": "Liman süreçlerinizi kesintisiz ve sorunsuz şekilde yönetiyoruz."
+      },
+      "customs": {
+        "title": "Gümrük ve Evrak Takibi",
+        "description": "Gümrük işlemlerinizi hızlı ve eksiksiz bir şekilde hallediyor, evraklarınızı takip ediyoruz."
+      },
+      "fuelSupply": {
+        "title": "Yakıt & Tedarik",
+        "description": "Yakıt temini ve gemiler için gerekli tüm tedarik hizmetlerini sağlıyoruz."
+      }
+    },
+    "whyUs": {
+      "title": "Neden Navmar Agency?",
+      "service247": {
+        "title": "7/24 Hizmet",
+        "description": "Her an ulaşılabilir, kesintisiz destek sağlıyoruz."
+      },
+      "experiencedTeam": {
+        "title": "Tecrübeli Ekip",
+        "description": "Denizcilik sektöründe uzman ve deneyimli profesyoneller."
+      },
+      "fastSolutions": {
+        "title": "Hızlı Çözümler",
+        "description": "Acil durumlar için hızlı ve etkili çözüm üretiyoruz."
+      }
+    },
+    "gallery": {
+      "title": "Galeri",
+      "subtitle": "Denizcilik operasyonlarımızdan görüntüler"
+    },
+    "cta": {
+      "title": "Denizcilik İşlemleriniz İçin Hemen İletişime Geçin",
+      "subtitle": "Size özel çözümler sunmak için hazırız. Detaylı bilgi almak için bizimle iletişime geçin.",
+      "button": "İletişim Formu"
+    }
+  },
+  "footer": {
+    "description": "İskenderun ve Mersin Limanları'nda profesyonel gemi acenteliği ve husbandry hizmetleri.",
+    "quickLinks": "Hızlı Linkler",
+    "contact": "İletişim",
+    "address": "Adres",
+    "district": "Mahallesi",
+    "country": "Türkiye",
+    "service247": "7/24 Hizmet",
+    "nonStopService": "7/24 Kesintisiz Hizmet",
+    "allRightsReserved": "Tüm hakları saklıdır",
+    "portsFooter": "İskenderun & Mersin Limanları"
+  },
+  "brand": {
+    "name": "NAVMAR",
+    "tagline": "Gemi Acenteliği"
+  }
+}
+
+

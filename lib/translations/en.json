@@ -1,0 +1,342 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "ports": "Ports",
+    "about": "About Us",
+    "contact": "Contact"
+  },
+  "brand": {
+    "name": "NAVMAR",
+    "tagline": "SHIPPING Agency"
+  },
+  "home": {
+    "title": "NAVMAR Shipping Agency",
+    "subtitle": "Professional maritime services",
+    "features": {
+      "service247": "24/7 Service",
+      "activePorts": "Active Ports",
+      "yearsExperience": "Years Experience",
+      "satisfiedClients": "Satisfied Clients"
+    },
+    "services": {
+      "title": "Our Services",
+      "subtitle": "Our wide range of services",
+      "viewAll": "View All Services"
+    },
+    "whyUs": {
+      "title": "Why Choose Us?",
+      "service247": {
+        "title": "24/7 Service",
+        "description": "Uninterrupted support"
+      }
+    },
+    "gallery": {
+      "title": "Gallery",
+      "subtitle": "Moments from our work"
+    },
+    "cta": {
+      "title": "Get In Touch",
+      "subtitle": "For professional service",
+      "button": "Contact Us"
+    },
+    "hero": {
+      "slides": [
+        {
+          "title": "Drop Anchor Safely",
+          "subtitle": "Professional Shipping Agency Services",
+          "description": "We Are With You in Your Maritime Operations"
+        },
+        {
+          "title": "24/7 Non-Stop Service",
+          "subtitle": "Accessible Anytime, Always Solution-Oriented",
+          "description": "At Turkey's Leading Ports"
+        },
+        {
+          "title": "Experienced Team",
+          "subtitle": "Years of Experience",
+          "description": "Professional Maritime Solutions"
+        },
+        {
+          "title": "Port Operations",
+          "subtitle": "Smooth and Fast Operations",
+          "description": "For All Your Vessel Operations"
+        },
+        {
+          "title": "Customs and Supply",
+          "subtitle": "Complete Documentation",
+          "description": "Fuel, Materials and Documentation Services"
+        }
+      ],
+      "buttons": {
+        "getQuote": "Get Quote",
+        "services": "Our Services"
+      },
+      "ariaLabels": {
+        "prevSlide": "Previous slide",
+        "nextSlide": "Next slide",
+        "goToSlide": "Go to slide {index}"
+      }
+    },
+    "galleryImages": [
+      "Vessel Operations 1",
+      "Vessel Operations 2",
+      "Port Services",
+      "Shipping Agency",
+      "Cargo Operations",
+      "Maritime Services",
+      "Port Operations",
+      "Ship Deck"
+    ]
+  },
+  "footer": {
+    "description": "As NAVMAR Shipping Agency, we provide professional maritime services at İskenderun and Mersin ports.",
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "service247": "24/7 Non-Stop Service",
+    "address": "Address",
+    "district": "District",
+    "country": "Turkey",
+    "nonStopService": "24/7 Non-Stop Service",
+    "allRightsReserved": "All rights reserved.",
+    "portsFooter": "İskenderun and Mersin Ports"
+  },
+  "services": {
+    "title": "Our Husbandry Services",
+    "subtitle": "As NAVMAR Shipping Agency, we carefully and completely meet all the needs of your vessels",
+    "features": "Features",
+    "cta": {
+      "title": "Would You Like Detailed Information About Our Services?",
+      "subtitle": "We are ready to offer you customized solutions and answer your questions",
+      "button": "Contact Us"
+    },
+    "items": {
+      "crewChange": {
+        "title": "Crew Change",
+        "description": "We carry out crew changes smoothly and quickly. We coordinate airport transfers, visa procedures, and all official processes.",
+        "features": [
+          "Airport transfer services",
+          "Visa and passport procedures",
+          "Ship-crew coordination",
+          "7/24 emergency crew change support"
+        ]
+      },
+      "healthTransfer": {
+        "title": "Personnel Health Facility Transfer",
+        "description": "We provide safe transfer services to hospitals and health facilities for your crew's health needs. We coordinate emergency and planned health services.",
+        "features": [
+          "Hospital transfer services",
+          "Emergency health situation coordination",
+          "Doctor appointment organization",
+          "Health report tracking"
+        ]
+      },
+      "provisioning": {
+        "title": "Provisioning, Spare Parts and Fresh Water Supply",
+        "description": "We meet your vessels' needs for provisions, food, spare parts, and fresh water. We offer quality products and on-time delivery guarantee.",
+        "features": [
+          "Fresh food and provision supply",
+          "Spare parts procurement",
+          "Fresh water supply",
+          "Ship materials and equipment"
+        ]
+      },
+      "customs": {
+        "title": "Spare Parts Customs Procedures",
+        "description": "We manage your spare parts' customs procedures quickly and completely. We ensure timely delivery by tracking all documents and procedures.",
+        "features": [
+          "Customs declaration preparation",
+          "Spare parts import procedures",
+          "Temporary import procedures",
+          "Document and paperwork tracking"
+        ]
+      },
+      "publications": {
+        "title": "Navigation Publications Supply",
+        "description": "We provide the supply of current sea charts, navigation publications, and nautical publications that your vessels need.",
+        "features": [
+          "Current sea charts",
+          "Navigation publications supply",
+          "Nautical publications",
+          "ADMIRALTY and other publications"
+        ]
+      },
+      "cashFuel": {
+        "title": "Cash and Fuel Supply to Vessels",
+        "description": "We provide safe cash supply and fuel bunkering services to your vessels. We ensure your operations continue uninterrupted with competitive prices and on-time delivery.",
+        "features": [
+          "Safe cash supply (Cash to Master)",
+          "Fuel (bunker) supply",
+          "Competitive fuel prices",
+          "Emergency fuel support"
+        ]
+      },
+      "waste": {
+        "title": "Waste Collection from Vessels",
+        "description": "We professionally provide waste collection and disposal services from vessels in accordance with environmental regulations.",
+        "features": [
+          "Waste collection in accordance with MARPOL standards",
+          "Solid waste collection",
+          "Liquid waste (bilge, slop) collection",
+          "Waste disposal certification"
+        ]
+      }
+    }
+  },
+  "ports": {
+    "title": "Ports We Serve",
+    "subtitle": "We provide 7/24 uninterrupted professional shipping agency services at İskenderun and Mersin Ports",
+    "intro": {
+      "title": "Expert Service in Mediterranean Ports",
+      "description1": "As NAVMAR Shipping Agency, we have a professional team specialized in shipping agency and husbandry services at İskenderun and Mersin Ports.",
+      "description2": "With our strong connections in the Mediterranean region and experienced staff, we quickly and reliably meet all the needs of your vessels. We are at your service 7/24 to provide professional solutions."
+    },
+    "services": "Services We Offer",
+    "stats": {
+      "activePorts": "Active Ports",
+      "service247": "24/7 Service",
+      "reliable": "Reliable Service"
+    },
+    "cta": {
+      "title": "Would You Like Service at Our Ports?",
+      "subtitle": "We are ready 7/24 to provide you with the best service in İskenderun and Mersin",
+      "button": "Contact Us Now"
+    },
+    "items": {
+      "iskenderun": {
+        "name": "İskenderun Port",
+        "city": "Hatay",
+        "description": "Strategic trade port of the Mediterranean, one of Turkey's most important container and general cargo ports",
+        "details": [
+          "Container operations",
+          "General cargo handling",
+          "Bulk cargo services",
+          "7/24 shipping agency",
+          "Husbandry services",
+          "Customs procedures"
+        ]
+      },
+      "mersin": {
+        "name": "Mersin Port",
+        "city": "Mersin",
+        "description": "Leading container port of the Mediterranean and one of Turkey's largest port complexes",
+        "details": [
+          "Container terminal services",
+          "Ro-Ro operations",
+          "General cargo loading-unloading",
+          "Shipping agency",
+          "Provisioning and technical support",
+          "In-port logistics solutions"
+        ]
+      }
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Your reliable solution partner in the maritime sector",
+    "company": {
+      "name": "NAVMAR Shipping Agency",
+      "description1": "NAVMAR Shipping Agency is a professional shipping agency company serving with years of experience and knowledge in the maritime sector. We operate continuously at İskenderun Port.",
+      "description2": "We were established to provide our clients with the highest quality husbandry services and help them carry out their maritime operations smoothly. We make a difference in the sector with our experienced team, strong local connections, and 7/24 uninterrupted communication infrastructure.",
+      "description3": "We provide comprehensive solutions in all husbandry services such as crew change, provisioning, spare parts customs procedures, navigation publications supply, fuel and cash supply, waste collection. We understand each client's specific needs and develop customized solutions for them.",
+      "description4": "Reliability, professionalism, and customer satisfaction are our most important principles. By acting with these values, we establish long-term and mutual trust-based business partnerships with our clients."
+    },
+    "stats": {
+      "years": "Years Experience",
+      "operations": "Successful Operations",
+      "port": "İskenderun Port",
+      "service247": "24/7 Service"
+    },
+    "mission": {
+      "title": "Our Mission, Vision and Values",
+      "subtitle": "The principles and goals that guide us",
+      "mission": {
+        "title": "Our Mission",
+        "description": "To support companies operating in the maritime sector in carrying out their operations smoothly and efficiently by providing the highest quality shipping agency services. To gain the trust of our clients and establish long-term business partnerships."
+      },
+      "vision": {
+        "title": "Our Vision",
+        "description": "To become one of Turkey's leading shipping agency companies and be recognized as a reliable partner in the international maritime industry. To become a reference company in the sector with our innovation and continuous development-oriented approach."
+      },
+      "values": {
+        "title": "Our Values",
+        "description": "Reliability, professionalism, transparency, and customer satisfaction are our core values. We make a difference with 7/24 uninterrupted communication, the ability to produce quick solutions, and our ethical business understanding. We value our employees and believe in sustainable growth."
+      }
+    },
+    "references": {
+      "title": "Our References",
+      "subtitle": "Prestigious companies we work with that prove our reliability",
+      "quote": "We make a difference in the maritime sector with our reliable business partnerships"
+    },
+    "whyUs": {
+      "title": "Why Should You Choose Us?",
+      "items": {
+        "experienced": {
+          "title": "Experienced Team",
+          "description": "Our professional staff with years of knowledge and experience in the sector."
+        },
+        "communication": {
+          "title": "24/7 Communication",
+          "description": "Being accessible at all times and producing instant solutions."
+        },
+        "expertise": {
+          "title": "İskenderun Port Expertise",
+          "description": "Uninterrupted service with deep knowledge and experience at İskenderun Port."
+        },
+        "reliability": {
+          "title": "Reliability",
+          "description": "Long-term partnerships with our transparent and honest business understanding."
+        },
+        "speed": {
+          "title": "Quick Solutions",
+          "description": "The ability to take effective and quick action for emergencies."
+        },
+        "comprehensive": {
+          "title": "Comprehensive Services",
+          "description": "All the services you need for your maritime operations."
+        }
+      }
+    },
+    "cta": {
+      "title": "Would You Like to Work With Us?",
+      "subtitle": "If you are looking for a reliable partner for your maritime operations, you are in the right place",
+      "button": "Contact Us"
+    }
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "We are at your service 7/24 for your questions",
+    "info": {
+      "title": "Contact Information",
+      "phone": "Phone / WhatsApp",
+      "whatsapp": "WhatsApp Line",
+      "phone247": "Phone",
+      "service247": "24/7 Non-Stop Service",
+      "email": "Email",
+      "address": "Address",
+      "social": "Social Media",
+      "hours": "Working Hours",
+      "nonStop": "Non-Stop Service"
+    },
+    "location": {
+      "title": "Our Location"
+    },
+    "form": {
+      "title": "Send a Message",
+      "subtitle": "We will get back to you as soon as possible",
+      "name": "Full Name",
+      "namePlaceholder": "Your Name and Surname",
+      "email": "Email",
+      "emailPlaceholder": "example@email.com",
+      "phone": "Phone",
+      "phonePlaceholder": "+90 (5xx) xxx xx xx",
+      "message": "Your Message",
+      "messagePlaceholder": "Write your message here...",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "successMessage": "Your message has been sent successfully! We will get back to you as soon as possible.",
+      "errorMessage": "Message could not be sent"
+    }
+  }
+}
+

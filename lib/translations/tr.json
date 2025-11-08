@@ -1,0 +1,342 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "services": "Hizmetler",
+    "ports": "Limanlar",
+    "about": "Hakkımızda",
+    "contact": "İletişim"
+  },
+  "brand": {
+    "name": "NAVMAR",
+    "tagline": "Gemi Acenteliği"
+  },
+  "home": {
+    "title": "NAVMAR Gemi Acenteliği",
+    "subtitle": "Profesyonel denizcilik hizmetleri",
+    "features": {
+      "service247": "Kesintisiz Hizmet",
+      "activePorts": "Aktif Liman",
+      "yearsExperience": "Yıllık Deneyim",
+      "satisfiedClients": "Memnun Müşteri"
+    },
+    "services": {
+      "title": "Hizmetlerimiz",
+      "subtitle": "Geniş hizmet yelpazemiz",
+      "viewAll": "Tüm Hizmetleri Gör"
+    },
+    "whyUs": {
+      "title": "Neden Bizi Seçmelisiniz?",
+      "service247": {
+        "title": "7/24 Hizmet",
+        "description": "Kesintisiz destek"
+      }
+    },
+    "gallery": {
+      "title": "Galeri",
+      "subtitle": "Çalışmalarımızdan kareler"
+    },
+    "cta": {
+      "title": "Bizimle İletişime Geçin",
+      "subtitle": "Profesyonel hizmet için",
+      "button": "İletişime Geç"
+    },
+    "hero": {
+      "slides": [
+        {
+          "title": "Güvenle Demir Atın",
+          "subtitle": "Profesyonel Gemi Acenteliği Hizmetleri",
+          "description": "Denizcilik İşlemlerinizde Yanınızdayız"
+        },
+        {
+          "title": "7/24 Kesintisiz Hizmet",
+          "subtitle": "Her An Ulaşılabilir, Her Zaman Çözüm Odaklı",
+          "description": "Türkiye'nin Önde Gelen Limanlarında"
+        },
+        {
+          "title": "Deneyimli Ekip",
+          "subtitle": "Yılların Verdiği Tecrübe",
+          "description": "Profesyonel Denizcilik Çözümleri"
+        },
+        {
+          "title": "Liman Operasyonları",
+          "subtitle": "Sorunsuz ve Hızlı İşlemler",
+          "description": "Tüm Gemi Operasyonlarınız İçin"
+        },
+        {
+          "title": "Gümrük ve Tedarik",
+          "subtitle": "Eksiksiz Dokümantasyon",
+          "description": "Yakıt, Malzeme ve Evrak Hizmetleri"
+        }
+      ],
+      "buttons": {
+        "getQuote": "Teklif Al",
+        "services": "Hizmetlerimiz"
+      },
+      "ariaLabels": {
+        "prevSlide": "Önceki slide",
+        "nextSlide": "Sonraki slide",
+        "goToSlide": "Slide {index}'e git"
+      }
+    },
+    "galleryImages": [
+      "Gemi Operasyonları 1",
+      "Gemi Operasyonları 2",
+      "Liman Hizmetleri",
+      "Gemi Acenteliği",
+      "Kargo Operasyonları",
+      "Denizcilik Hizmetleri",
+      "Liman Operasyonları",
+      "Gemi Güvertesi"
+    ]
+  },
+  "footer": {
+    "description": "NAVMAR Gemi Acenteliği olarak, İskenderun ve Mersin limanlarında profesyonel denizcilik hizmetleri sunuyoruz.",
+    "quickLinks": "Hızlı Bağlantılar",
+    "contact": "İletişim",
+    "service247": "7/24 Kesintisiz Hizmet",
+    "address": "Adres",
+    "district": "Mahallesi",
+    "country": "Türkiye",
+    "nonStopService": "7/24 Kesintisiz Hizmet",
+    "allRightsReserved": "Tüm hakları saklıdır.",
+    "portsFooter": "İskenderun ve Mersin Limanları"
+  },
+  "services": {
+    "title": "Husbandry Hizmetlerimiz",
+    "subtitle": "NAVMAR Gemi Acenteliği olarak gemilerinizin tüm ihtiyaçlarını özenle ve eksiksiz şekilde karşılıyoruz",
+    "features": "Özellikler",
+    "cta": {
+      "title": "Hizmetlerimiz Hakkında Detaylı Bilgi Almak İster misiniz?",
+      "subtitle": "Size özel çözümler sunmak ve sorularınızı yanıtlamak için hazırız",
+      "button": "Bize Ulaşın"
+    },
+    "items": {
+      "crewChange": {
+        "title": "Tayfa Değişimi",
+        "description": "Mürettebat değişikliklerini sorunsuz ve hızlı bir şekilde gerçekleştiriyoruz. Havaalanı transferleri, vize işlemleri ve tüm resmi prosedürleri koordine ediyoruz.",
+        "features": [
+          "Havaalanı transfer hizmetleri",
+          "Vize ve pasaport işlemleri",
+          "Gemi ile personel koordinasyonu",
+          "7/24 acil tayfa değişimi desteği"
+        ]
+      },
+      "healthTransfer": {
+        "title": "Personel Sağlık Kuruluşu Transferi",
+        "description": "Mürettebatınızın sağlık ihtiyaçları için hastane ve sağlık kuruluşlarına güvenli transfer hizmeti sunuyoruz. Acil ve planlı sağlık hizmetleri koordinasyonu yapıyoruz.",
+        "features": [
+          "Hastane transfer hizmetleri",
+          "Acil sağlık durumları koordinasyonu",
+          "Doktor randevu organizasyonu",
+          "Sağlık raporları takibi"
+        ]
+      },
+      "provisioning": {
+        "title": "Kumanya, Yedek Parça ve Tatlı Su İkmali",
+        "description": "Gemilerinizin kumanya, gıda, yedek parça ve tatlı su ihtiyaçlarını karşılıyoruz. Kaliteli ürünler ve zamanında teslimat garantisi sunuyoruz.",
+        "features": [
+          "Taze gıda ve kumanya temini",
+          "Yedek parça tedariki",
+          "Tatlı su ikmali",
+          "Gemi malzemeleri ve ekipmanları"
+        ]
+      },
+      "customs": {
+        "title": "Yedek Parça Gümrük Prosedürleri",
+        "description": "Yedek parçalarınızın gümrük işlemlerini hızlı ve eksiksiz bir şekilde yönetiyoruz. Tüm evrak ve prosedürleri takip ederek, zamanında teslim alınmasını sağlıyoruz.",
+        "features": [
+          "Gümrük beyannamesi hazırlama",
+          "Yedek parça ithalat işlemleri",
+          "Geçici ithalat prosedürleri",
+          "Belge ve evrak takibi"
+        ]
+      },
+      "publications": {
+        "title": "Seyir Neşriyatları Temini",
+        "description": "Gemilerinizin ihtiyaç duyduğu güncel deniz haritaları, seyir yayınları ve nautical publikasyonların teminini sağlıyoruz.",
+        "features": [
+          "Güncel deniz haritaları",
+          "Seyir yayınları temini",
+          "Nautical publikasyonlar",
+          "ADMIRALTY ve diğer yayınlar"
+        ]
+      },
+      "cashFuel": {
+        "title": "Gemiye Nakit ve Yakıt Tedariki",
+        "description": "Gemilerinize güvenli nakit tedariki ve yakıt ikmali hizmeti sunuyoruz. Rekabetçi fiyatlar ve zamanında teslimat ile operasyonlarınızı kesintisiz sürdürmenizi sağlıyoruz.",
+        "features": [
+          "Güvenli nakit tedariki (Cash to Master)",
+          "Yakıt (bunker) temini",
+          "Rekabetçi yakıt fiyatları",
+          "Acil durum yakıt desteği"
+        ]
+      },
+      "waste": {
+        "title": "Gemiden Çöp ve Atık Alımı",
+        "description": "Çevre düzenlemelerine uygun olarak gemilerden çöp ve atık malzemelerin toplanması ve bertaraf edilmesi hizmetini profesyonelce sunuyoruz.",
+        "features": [
+          "MARPOL standartlarına uygun atık toplama",
+          "Katı atık alımı",
+          "Sıvı atık (bilge, slop) alımı",
+          "Atık bertaraf belgelendirmesi"
+        ]
+      }
+    }
+  },
+  "ports": {
+    "title": "Hizmet Verdiğimiz Limanlar",
+    "subtitle": "İskenderun ve Mersin Limanları'nda 7/24 kesintisiz profesyonel gemi acenteliği hizmeti sunuyoruz",
+    "intro": {
+      "title": "Akdeniz Limanlarında Uzman Hizmet",
+      "description1": "NAVMAR Gemi Acenteliği olarak, İskenderun ve Mersin Limanları'nda gemi acenteliği ve husbandry hizmetlerinde uzmanlaşmış profesyonel bir ekibe sahibiz.",
+      "description2": "Akdeniz bölgesindeki güçlü bağlantılarımız ve deneyimli kadromuzla gemilerinizin tüm ihtiyaçlarını hızlı ve güvenilir bir şekilde karşılıyoruz. Profesyonel çözümler sunmak için 7/24 hizmetinizdeyiz."
+    },
+    "services": "Sunduğumuz Hizmetler",
+    "stats": {
+      "activePorts": "Aktif Liman",
+      "service247": "Kesintisiz Hizmet",
+      "reliable": "Güvenilir Hizmet"
+    },
+    "cta": {
+      "title": "Limanlarımızda Hizmet Almak İster misiniz?",
+      "subtitle": "İskenderun ve Mersin'de size en iyi hizmeti sunmak için 7/24 hazırız",
+      "button": "Hemen İletişime Geçin"
+    },
+    "items": {
+      "iskenderun": {
+        "name": "İskenderun Limanı",
+        "city": "Hatay",
+        "description": "Akdeniz'in stratejik ticaret limanı, Türkiye'nin en önemli konteyner ve genel kargo limanlarından biri",
+        "details": [
+          "Konteyner operasyonları",
+          "Genel kargo elleçleme",
+          "Dökme yük hizmetleri",
+          "7/24 gemi acenteliği",
+          "Husbandry hizmetleri",
+          "Gümrük prosedürleri"
+        ]
+      },
+      "mersin": {
+        "name": "Mersin Limanı",
+        "city": "Mersin",
+        "description": "Akdeniz'in lider konteyner limanı ve Türkiye'nin en büyük liman komplekslerinden biri",
+        "details": [
+          "Konteyner terminali hizmetleri",
+          "Ro-Ro operasyonları",
+          "Genel kargo yükleme-boşaltma",
+          "Gemi acenteliği",
+          "Provizyon ve teknik destek",
+          "Liman içi lojistik çözümleri"
+        ]
+      }
+    }
+  },
+  "about": {
+    "title": "Hakkımızda",
+    "subtitle": "Denizcilik sektöründe güvenilir çözüm ortağınız",
+    "company": {
+      "name": "NAVMAR Gemi Acenteliği",
+      "description1": "NAVMAR Gemi Acenteliği, denizcilik sektöründe yılların verdiği tecrübe ve birikimle hizmet veren profesyonel bir gemi acenteliği şirketidir. İskenderun Limanı'nda kesintisiz operasyon yürütüyoruz.",
+      "description2": "Müşterilerimize en yüksek kalitede husbandry hizmetleri sunmak ve onların denizcilik operasyonlarını sorunsuz bir şekilde gerçekleştirmelerine yardımcı olmak için kurulduk. Deneyimli ekibimiz, güçlü yerel bağlantılarımız ve 7/24 kesintisiz iletişim altyapımız ile sektörde fark yaratıyoruz.",
+      "description3": "Tayfa değişimi, kumanya ikmali, yedek parça gümrük prosedürleri, seyir neşriyatları temini, yakıt ve nakit tedariki, atık alımı gibi tüm husbandry hizmetlerinde kapsamlı çözümler sunuyoruz. Her müşterimizin özel ihtiyaçlarını anlayarak, onlara özel çözümler geliştiriyoruz.",
+      "description4": "Güvenilirlik, profesyonellik ve müşteri memnuniyeti bizim için en önemli ilkelerdir. Bu değerlerle hareket ederek, müşterilerimizle uzun vadeli ve karşılıklı güvene dayalı iş ortaklıkları kuruyoruz."
+    },
+    "stats": {
+      "years": "Yıllık Tecrübe",
+      "operations": "Başarılı Operasyon",
+      "port": "İskenderun Limanı",
+      "service247": "Kesintisiz Hizmet"
+    },
+    "mission": {
+      "title": "Misyon, Vizyon ve Değerlerimiz",
+      "subtitle": "Bizi yönlendiren ilkeler ve hedeflerimiz",
+      "mission": {
+        "title": "Misyonumuz",
+        "description": "Denizcilik sektöründe faaliyet gösteren şirketlere en yüksek kalitede gemi acenteliği hizmetleri sunarak, operasyonlarını sorunsuz ve verimli bir şekilde yürütmelerine destek olmak. Müşterilerimizin güvenini kazanmak ve uzun vadeli iş ortaklıkları kurmak."
+      },
+      "vision": {
+        "title": "Vizyonumuz",
+        "description": "Türkiye'nin önde gelen gemi acenteliği şirketlerinden biri olmak ve uluslararası denizcilik endüstrisinde güvenilir bir ortak olarak tanınmak. İnovasyon ve sürekli gelişim odaklı yaklaşımımızla sektörde referans bir şirket haline gelmek."
+      },
+      "values": {
+        "title": "Değerlerimiz",
+        "description": "Güvenilirlik, profesyonellik, şeffaflık ve müşteri memnuniyeti temel değerlerimizdir. 7/24 kesintisiz iletişim, hızlı çözüm üretme yeteneği ve etik iş anlayışımızla fark yaratıyoruz. Çalışanlarımıza değer verir, sürdürülebilir büyümeye inanırız."
+      }
+    },
+    "references": {
+      "title": "Referanslarımız",
+      "subtitle": "Güvenilirliğimizi kanıtlayan, birlikte çalıştığımız prestijli şirketler",
+      "quote": "Güvenilir iş ortaklıklarımızla denizcilik sektöründe fark yaratıyoruz"
+    },
+    "whyUs": {
+      "title": "Neden Bizi Tercih Etmelisiniz?",
+      "items": {
+        "experienced": {
+          "title": "Deneyimli Ekip",
+          "description": "Sektörde yılların verdiği bilgi ve tecrübeye sahip profesyonel kadromuz."
+        },
+        "communication": {
+          "title": "7/24 İletişim",
+          "description": "Günün her saati ulaşılabilir olmak ve anında çözüm üretmek."
+        },
+        "expertise": {
+          "title": "İskenderun Limanı Uzmanlığı",
+          "description": "İskenderun Limanı'nda derin bilgi ve deneyimle kesintisiz hizmet."
+        },
+        "reliability": {
+          "title": "Güvenilirlik",
+          "description": "Şeffaf ve dürüst iş anlayışımızla uzun vadeli ortaklıklar."
+        },
+        "speed": {
+          "title": "Hızlı Çözümler",
+          "description": "Acil durumlar için etkili ve hızlı aksiyon alma yeteneği."
+        },
+        "comprehensive": {
+          "title": "Kapsamlı Hizmetler",
+          "description": "Denizcilik operasyonlarınız için ihtiyaç duyduğunuz tüm hizmetler."
+        }
+      }
+    },
+    "cta": {
+      "title": "Bizimle Çalışmak İster misiniz?",
+      "subtitle": "Denizcilik operasyonlarınız için güvenilir bir ortak arıyorsanız, doğru yerdesiniz",
+      "button": "İletişime Geçin"
+    }
+  },
+  "contact": {
+    "title": "Bize Ulaşın",
+    "subtitle": "Sorularınız için 7/24 hizmetinizdeyiz",
+    "info": {
+      "title": "İletişim Bilgileri",
+      "phone": "Telefon / WhatsApp",
+      "whatsapp": "WhatsApp Hattı",
+      "phone247": "Telefon",
+      "service247": "7/24 Kesintisiz Hizmet",
+      "email": "E-posta",
+      "address": "Adres",
+      "social": "Sosyal Medya",
+      "hours": "Çalışma Saatleri",
+      "nonStop": "Kesintisiz Hizmet"
+    },
+    "location": {
+      "title": "Konumumuz"
+    },
+    "form": {
+      "title": "Mesaj Gönderin",
+      "subtitle": "En kısa sürede size geri dönüş yapacağız",
+      "name": "İsim Soyisim",
+      "namePlaceholder": "Adınız Soyadınız",
+      "email": "E-posta",
+      "emailPlaceholder": "ornek@email.com",
+      "phone": "Telefon",
+      "phonePlaceholder": "+90 (5xx) xxx xx xx",
+      "message": "Mesajınız",
+      "messagePlaceholder": "Mesajınızı buraya yazın...",
+      "submit": "Mesaj Gönder",
+      "sending": "Gönderiliyor...",
+      "successMessage": "Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.",
+      "errorMessage": "Mesaj gönderilemedi"
+    }
+  }
+}
+

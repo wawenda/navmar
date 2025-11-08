@@ -2,20 +2,32 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const galleryImages = [
-  { src: "/ship-1.jpeg", alt: "Gemi Operasyonları 1" },
-  { src: "/ship-2.jpeg", alt: "Gemi Operasyonları 2" },
-  { src: "/ship-3.jpeg", alt: "Liman Hizmetleri" },
-  { src: "/ship-4.jpeg", alt: "Gemi Acenteliği" },
-  { src: "/ship-5.jpeg", alt: "Kargo Operasyonları" },
-  { src: "/ship-6.jpeg", alt: "Denizcilik Hizmetleri" },
-  { src: "/ship-8.jpeg", alt: "Liman Operasyonları" },
-  { src: "/ship-deck.jpg", alt: "Gemi Güvertesi" },
+  "/ship-1.jpeg",
+  "/ship-2.jpeg",
+  "/ship-3.jpeg",
+  "/ship-4.jpeg",
+  "/ship-5.jpeg",
+  "/ship-6.jpeg",
+  "/ship-8.jpeg",
+  "/ship-deck.jpg",
 ];
 
 export default function GallerySection() {
+  const { t } = useLanguage();
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
+
+  const getImageAlts = () => {
+    const alts = t('home.galleryImages');
+    if (Array.isArray(alts) && alts.length > 0) {
+      return alts;
+    }
+    return galleryImages.map((_, i) => `Image ${i + 1}`);
+  };
+
+  const imageAlts = getImageAlts();
 
   return (
     <>
@@ -27,8 +39,8 @@ export default function GallerySection() {
             onClick={() => setSelectedImage(index)}
           >
             <Image
-              src={image.src}
-              alt={image.alt}
+              src={image}
+              alt={imageAlts[index] || `Gallery image ${index + 1}`}
               fill
               className="object-cover transition-transform duration-300 group-hover:scale-110"
             />
@@ -51,8 +63,8 @@ export default function GallerySection() {
           </button>
           <div className="relative w-full max-w-4xl h-[80vh]">
             <Image
-              src={galleryImages[selectedImage].src}
-              alt={galleryImages[selectedImage].alt}
+              src={galleryImages[selectedImage]}
+              alt={imageAlts[selectedImage] || `Gallery image ${selectedImage + 1}`}
               fill
               className="object-contain"
             />
@@ -88,6 +100,3 @@ export default function GallerySection() {
     </>
   );
 }
-
-
-

@@ -1,9 +1,11 @@
 'use client';
 
+import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Hizmetler() {
-  const { language } = useLanguage();
+  const { locale, t } = useLanguage();
+  
   const services = [
     {
       icon: (
@@ -16,24 +18,7 @@ export default function Hizmetler() {
           />
         </svg>
       ),
-      titleTR: "Tayfa Değişimi",
-      titleEN: "Crew Change",
-      descriptionTR:
-        "Mürettebat değişikliklerini sorunsuz ve hızlı bir şekilde gerçekleştiriyoruz. Havaalanı transferleri, vize işlemleri ve tüm resmi prosedürleri koordine ediyoruz.",
-      descriptionEN:
-        "We carry out crew changes smoothly and quickly. We coordinate airport transfers, visa procedures, and all official processes.",
-      featuresTR: [
-        "Havaalanı transfer hizmetleri",
-        "Vize ve pasaport işlemleri",
-        "Gemi ile personel koordinasyonu",
-        "7/24 acil tayfa değişimi desteği",
-      ],
-      featuresEN: [
-        "Airport transfer services",
-        "Visa and passport procedures",
-        "Ship-crew coordination",
-        "7/24 emergency crew change support",
-      ],
+      key: 'crewChange',
     },
     {
       icon: (
@@ -46,15 +31,7 @@ export default function Hizmetler() {
           />
         </svg>
       ),
-      title: "Personel Sağlık Kuruluşu Transferi",
-      description:
-        "Mürettebatınızın sağlık ihtiyaçları için hastane ve sağlık kuruluşlarına güvenli transfer hizmeti sunuyoruz. Acil ve planlı sağlık hizmetleri koordinasyonu yapıyoruz.",
-      features: [
-        "Hastane transfer hizmetleri",
-        "Acil sağlık durumları koordinasyonu",
-        "Doktor randevu organizasyonu",
-        "Sağlık raporları takibi",
-      ],
+      key: 'healthTransfer',
     },
     {
       icon: (
@@ -67,15 +44,7 @@ export default function Hizmetler() {
           />
         </svg>
       ),
-      title: "Kumanya, Yedek Parça ve Tatlı Su İkmali",
-      description:
-        "Gemilerinizin kumanya, gıda, yedek parça ve tatlı su ihtiyaçlarını karşılıyoruz. Kaliteli ürünler ve zamanında teslimat garantisi sunuyoruz.",
-      features: [
-        "Taze gıda ve kumanya temini",
-        "Yedek parça tedariki",
-        "Tatlı su ikmali",
-        "Gemi malzemeleri ve ekipmanları",
-      ],
+      key: 'provisioning',
     },
     {
       icon: (
@@ -88,15 +57,7 @@ export default function Hizmetler() {
           />
         </svg>
       ),
-      title: "Yedek Parça Gümrük Prosedürleri",
-      description:
-        "Yedek parçalarınızın gümrük işlemlerini hızlı ve eksiksiz bir şekilde yönetiyoruz. Tüm evrak ve prosedürleri takip ederek, zamanında teslim alınmasını sağlıyoruz.",
-      features: [
-        "Gümrük beyannamesi hazırlama",
-        "Yedek parça ithalat işlemleri",
-        "Geçici ithalat prosedürleri",
-        "Belge ve evrak takibi",
-      ],
+      key: 'customs',
     },
     {
       icon: (
@@ -109,15 +70,7 @@ export default function Hizmetler() {
           />
         </svg>
       ),
-      title: "Seyir Neşriyatları Temini",
-      description:
-        "Gemilerinizin ihtiyaç duyduğu güncel deniz haritaları, seyir yayınları ve nautical publikasyonların teminini sağlıyoruz.",
-      features: [
-        "Güncel deniz haritaları",
-        "Seyir yayınları temini",
-        "Nautical publikasyonlar",
-        "ADMIRALTY ve diğer yayınlar",
-      ],
+      key: 'publications',
     },
     {
       icon: (
@@ -130,15 +83,7 @@ export default function Hizmetler() {
           />
         </svg>
       ),
-      title: "Gemiye Nakit ve Yakıt Tedariki",
-      description:
-        "Gemilerinize güvenli nakit tedariki ve yakıt ikmali hizmeti sunuyoruz. Rekabetçi fiyatlar ve zamanında teslimat ile operasyonlarınızı kesintisiz sürdürmenizi sağlıyoruz.",
-      features: [
-        "Güvenli nakit tedariki (Cash to Master)",
-        "Yakıt (bunker) temini",
-        "Rekabetçi yakıt fiyatları",
-        "Acil durum yakıt desteği",
-      ],
+      key: 'cashFuel',
     },
     {
       icon: (
@@ -151,15 +96,7 @@ export default function Hizmetler() {
           />
         </svg>
       ),
-      title: "Gemiden Çöp ve Atık Alımı",
-      description:
-        "Çevre düzenlemelerine uygun olarak gemilerden çöp ve atık malzemelerin toplanması ve bertaraf edilmesi hizmetini profesyonelce sunuyoruz.",
-      features: [
-        "MARPOL standartlarına uygun atık toplama",
-        "Katı atık alımı",
-        "Sıvı atık (bilge, slop) alımı",
-        "Atık bertaraf belgelendirmesi",
-      ],
+      key: 'waste',
     },
   ];
 
@@ -168,9 +105,9 @@ export default function Hizmetler() {
       {/* Hero Section */}
       <section className="bg-primary text-white py-16 pt-32">
         <div className="max-w-6xl mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Husbandry Hizmetlerimiz</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">{t('services.title')}</h1>
           <p className="text-xl text-white/90 max-w-3xl mx-auto">
-            NAVMAR Gemi Acenteliği olarak gemilerinizin tüm ihtiyaçlarını özenle ve eksiksiz şekilde karşılıyoruz
+            {t('services.subtitle')}
           </p>
         </div>
       </section>
@@ -186,34 +123,40 @@ export default function Hizmetler() {
               >
                 <div className="text-accent mb-4">{service.icon}</div>
                 <h2 className="text-2xl font-bold text-primary mb-4">
-                  {service.title}
+                  {t(`services.items.${service.key}.title`)}
                 </h2>
                 <p className="text-gray-600 leading-relaxed mb-6">
-                  {service.description}
+                  {t(`services.items.${service.key}.description`)}
                 </p>
                 <div className="border-t border-slate-100 pt-4">
                   <h3 className="text-sm font-semibold text-primary mb-3 uppercase tracking-wide">
-                    Özellikler
+                    {t('services.features')}
                   </h3>
                   <ul className="space-y-2">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start space-x-2 text-sm text-gray-600">
-                        <svg
-                          className="w-5 h-5 text-accent flex-shrink-0 mt-0.5"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                        <span>{feature}</span>
-                      </li>
-                    ))}
+                    {(() => {
+                      const features = t(`services.items.${service.key}.features`);
+                      if (Array.isArray(features)) {
+                        return features.map((feature: string, idx: number) => (
+                          <li key={idx} className="flex items-start space-x-2 text-sm text-gray-600">
+                            <svg
+                              className="w-5 h-5 text-accent flex-shrink-0 mt-0.5"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M5 13l4 4L19 7"
+                              />
+                            </svg>
+                            <span>{feature}</span>
+                          </li>
+                        ));
+                      }
+                      return null;
+                    })()}
                   </ul>
                 </div>
               </div>
@@ -226,21 +169,19 @@ export default function Hizmetler() {
       <section className="py-16 bg-slate-50">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-            Hizmetlerimiz Hakkında Detaylı Bilgi Almak İster misiniz?
+            {t('services.cta.title')}
           </h2>
           <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-            Size özel çözümler sunmak ve sorularınızı yanıtlamak için hazırız
+            {t('services.cta.subtitle')}
           </p>
-          <a
-            href="/iletisim"
+          <Link
+            href={`/${locale}/iletisim`}
             className="inline-block bg-accent text-primary px-8 py-4 rounded-lg font-semibold text-lg hover:bg-accent-hover transition-colors duration-200 shadow-lg"
           >
-            Bize Ulaşın
-          </a>
+            {t('services.cta.button')}
+          </Link>
         </div>
       </section>
     </>
   );
 }
-
-
