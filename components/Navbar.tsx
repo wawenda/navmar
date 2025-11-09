@@ -12,11 +12,11 @@ export default function Navbar() {
   const { locale: language, setLocale: setLanguage, t } = useLanguage();
 
   const navigation = [
-    { nameTR: "Ana Sayfa", nameEN: "Home", href: "/" },
-    { nameTR: "Hizmetler", nameEN: "Services", href: "/hizmetler" },
-    { nameTR: "Limanlar", nameEN: "Ports", href: "/limanlar" },
-    { nameTR: "Hakkımızda", nameEN: "About Us", href: "/hakkimizda" },
-    { nameTR: "İletişim", nameEN: "Contact", href: "/iletisim" },
+    { key: "home", href: "/" },
+    { key: "services", href: "/hizmetler" },
+    { key: "ports", href: "/limanlar" },
+    { key: "about", href: "/hakkimizda" },
+    { key: "contact", href: "/iletisim" },
   ];
 
   // Helper function to add locale to href
@@ -58,7 +58,7 @@ export default function Navbar() {
                 NAVMAR
               </span>
               <span className="text-[9px] md:text-[10px] lg:text-xs font-bold text-accent tracking-wider uppercase whitespace-nowrap">
-                {language === 'tr' ? 'Gemi Acenteliği' : 'Shipping Agency'}
+                {t('brand.tagline') || (language === 'tr' ? 'Gemi Acenteliği' : 'Shipping Agency')}
               </span>
             </div>
           </Link>
@@ -80,7 +80,7 @@ export default function Navbar() {
                     : "text-white/90 hover:bg-white/10 hover:text-white"
                 }`}
               >
-                {language === 'tr' ? item.nameTR : item.nameEN}
+                {t(`nav.${item.key}`)}
               </Link>
             ))}
             
@@ -107,6 +107,17 @@ export default function Navbar() {
               >
                 <Image src="/flags/en.svg" alt="EN" width={20} height={15} className="w-5 h-4" />
                 <span>EN</span>
+              </button>
+              <button
+                onClick={() => setLanguage('ru')}
+                className={`px-3 py-1.5 rounded-md text-xs font-semibold transition-all flex items-center gap-1.5 ${
+                  language === 'ru'
+                    ? 'bg-accent text-primary'
+                    : 'text-white/80 hover:text-white'
+                }`}
+              >
+                <Image src="/flags/ru.svg" alt="RU" width={20} height={15} className="w-5 h-4" />
+                <span>RU</span>
               </button>
             </div>
           </div>
@@ -156,12 +167,12 @@ export default function Navbar() {
                 }`}
                 onClick={() => setMobileMenuOpen(false)}
               >
-                {language === 'tr' ? item.nameTR : item.nameEN}
+                {t(`nav.${item.key}`)}
               </Link>
             ))}
             
             {/* Mobile Language Switcher */}
-            <div className="flex items-center justify-center gap-2 pt-4 border-t border-white/20">
+            <div className="flex items-center justify-center gap-2 pt-4 border-t border-white/20 flex-wrap">
               <button
                 onClick={() => setLanguage('tr')}
                 className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all flex items-center gap-2 ${
@@ -183,6 +194,17 @@ export default function Navbar() {
               >
                 <Image src="/flags/en.svg" alt="EN" width={24} height={18} className="w-6 h-5" />
                 <span>English</span>
+              </button>
+              <button
+                onClick={() => setLanguage('ru')}
+                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all flex items-center gap-2 ${
+                  language === 'ru'
+                    ? 'bg-accent text-primary'
+                    : 'bg-white/10 text-white/80'
+                }`}
+              >
+                <Image src="/flags/ru.svg" alt="RU" width={24} height={18} className="w-6 h-5" />
+                <span>Русский</span>
               </button>
             </div>
           </div>

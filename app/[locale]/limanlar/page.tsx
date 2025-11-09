@@ -69,7 +69,7 @@ export default function Limanlar() {
                 {t('ports.intro.title')}
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                <strong className="text-primary">{t('brand.name')} {t('brand.tagline')}</strong> olarak, {t('ports.intro.description1')}
+              {t('ports.intro.description1')}
               </p>
               <p className="text-gray-600 leading-relaxed">
                 {t('ports.intro.description2')}

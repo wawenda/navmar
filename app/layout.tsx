@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     languages: {
       'tr': '/tr',
       'en': '/en',
+      'ru': '/ru',
       'x-default': '/tr',
     },
   },
@@ -24,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="tr" className="overflow-x-hidden" suppressHydrationWarning>
+    <html lang="tr" dir="ltr" className="overflow-x-hidden" suppressHydrationWarning>
       <body className="overflow-x-hidden">
         <LangAttributeSetter />
         {children}

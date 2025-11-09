@@ -19,6 +19,21 @@ body {
   width: 100%;
 }
 
+/* RTL Support for Arabic */
+html[dir="rtl"] {
+  direction: rtl;
+}
+
+html[dir="rtl"] body {
+  direction: rtl;
+  text-align: right;
+}
+
+/* RTL adjustments for flex containers */
+html[dir="rtl"] .flex {
+  direction: rtl;
+}
+
 @keyframes fade-in {
   from {
     opacity: 0;

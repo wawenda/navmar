@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://navmaragency.com'
-  const locales = ['tr', 'en']
+  const locales = ['tr', 'en', 'ru']
   const routes = ['', 'hizmetler', 'limanlar', 'hakkimizda', 'iletisim']
   
   const urls: MetadataRoute.Sitemap = []
@@ -19,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
           languages: {
             tr: route === '' ? `${baseUrl}/tr` : `${baseUrl}/tr/${route}`,
             en: route === '' ? `${baseUrl}/en` : `${baseUrl}/en/${route}`,
+            ru: route === '' ? `${baseUrl}/ru` : `${baseUrl}/ru/${route}`,
             'x-default': route === '' ? `${baseUrl}/tr` : `${baseUrl}/tr/${route}`,
           },
         },
