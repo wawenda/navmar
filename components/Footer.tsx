@@ -9,7 +9,7 @@ export default function Footer() {
   const { locale, t } = useLanguage();
 
   return (
-    <footer className="bg-gradient-to-b from-primary via-primary to-[#001530] text-white mt-auto">
+    <footer className="bg-gradient-to-b from-primary via-primary to-primary/90 text-white mt-auto">
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-4 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
@@ -20,7 +20,7 @@ export default function Footer() {
               {/* Ship-themed logo container */}
               <div className="relative w-16 h-16 flex-shrink-0">
                 {/* Glowing background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-blue-400/20 blur-lg group-hover:blur-xl transition-all"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-accent/10 blur-lg group-hover:blur-xl transition-all"></div>
                 
                 {/* Ship hull background - More prominent */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-65 group-hover:opacity-75 transition-opacity">
@@ -42,12 +42,12 @@ export default function Footer() {
                     <rect x="46" y="14" width="8" height="8" rx="1" fill="currentColor" className="text-accent"/>
                     {/* Waves at bottom */}
                     <path d="M20,75 Q25,73 30,75 Q35,77 40,75 Q45,73 50,75 Q55,77 60,75 Q65,73 70,75 Q75,77 80,75" 
-                          stroke="currentColor" strokeWidth="1.5" fill="none" className="text-blue-400/30"/>
+                          stroke="currentColor" strokeWidth="1.5" fill="none" className="text-accent/30"/>
                   </svg>
                 </div>
 
                 {/* Main logo */}
-                <div className="absolute inset-2 bg-gradient-to-br from-white via-blue-50 to-white rounded-[40%] shadow-xl group-hover:shadow-accent/30 group-hover:scale-105 transition-all flex items-center justify-center" style={{borderRadius: '50% 50% 45% 45%'}}>
+                <div className="absolute inset-2 bg-gradient-to-br from-white via-white to-white rounded-[40%] shadow-xl group-hover:shadow-accent/30 group-hover:scale-105 transition-all flex items-center justify-center" style={{borderRadius: '50% 50% 45% 45%'}}>
                   <div className="relative w-full h-full p-2">
                     <Image
                       src="/logo.png"
@@ -130,7 +130,7 @@ export default function Footer() {
             <div className="space-y-4 text-sm">
               {/* Telefonlar */}
               <div>
-                <p className="text-xs text-accent/80 uppercase tracking-wider mb-2 font-semibold">
+                <p className="text-xs text-accent uppercase tracking-wider mb-2 font-semibold">
                   {t('contact.info.phones')}
                 </p>
                 <ul className="space-y-2 text-white/70">
@@ -138,25 +138,25 @@ export default function Footer() {
                     <a href="tel:+905056453119" className="hover:text-accent transition-colors block">
                       +90 (505) 645 31 19
                     </a>
-                    <p className="text-xs text-accent/70">{t('contact.info.phone')}</p>
+                    <p className="text-xs text-accent">{t('contact.info.phone')}</p>
                   </li>
                   <li>
                     <a href="tel:+905455476013" className="hover:text-accent transition-colors block">
                       +90 (545) 547 60 13
                     </a>
-                    <p className="text-xs text-accent/70">{t('footer.service247')}</p>
+                    <p className="text-xs text-accent">{t('footer.service247')}</p>
                   </li>
                   <li>
                     <a href="tel:+903265033119" className="hover:text-accent transition-colors block">
                       +90 (326) 503 31 19
                     </a>
-                    <p className="text-xs text-accent/70">{t('contact.info.phoneFixed')}</p>
+                    <p className="text-xs text-accent">{t('contact.info.phoneFixed')}</p>
                   </li>
                 </ul>
               </div>
               {/* E-postalar */}
               <div>
-                <p className="text-xs text-accent/80 uppercase tracking-wider mb-2 font-semibold">
+                <p className="text-xs text-accent uppercase tracking-wider mb-2 font-semibold">
                   {t('contact.info.emails')}
                 </p>
                 <ul className="space-y-1 text-white/70">

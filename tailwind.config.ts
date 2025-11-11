@@ -10,8 +10,8 @@ const config: Config = {
     extend: {
       colors: {
         primary: "#001b44",
-        accent: "#d4af37",
-        "accent-hover": "#c29c24",
+        accent: "#FFD700",
+        "accent-hover": "#FFC107",
       },
     },
   },

@@ -34,12 +34,12 @@ export default function Navbar() {
     <nav 
       className="text-white fixed top-0 left-0 right-0 z-50 bg-primary shadow-lg overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+      <div className="w-full relative">
         <div className="flex justify-between items-center h-20 md:h-24">
-          {/* Logo - Simple Design */}
+          {/* Logo - Simple Design - Left Edge */}
           <Link 
             href={getLocalizedHref("/")}
-            className="flex items-center gap-2.5 px-2 md:px-3 py-2 transition-all duration-300 group relative z-10 flex-shrink-0"
+            className="flex items-center gap-2.5 px-4 md:px-6 lg:pl-4 py-2 transition-all duration-300 group relative z-10 flex-shrink-0"
           >
             {/* Logo Icon - With white background */}
             <div className="bg-white p-1 md:p-1.5 rounded-lg shadow-xl group-hover:shadow-2xl transition-all duration-300 flex-shrink-0">
@@ -63,8 +63,8 @@ export default function Navbar() {
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-1 flex-1 justify-center max-w-2xl mx-auto">
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden lg:flex items-center space-x-1 absolute left-1/2 -translate-x-1/2">
             {navigation.map((item) => (
               <Link
                 key={item.href}
@@ -80,8 +80,8 @@ export default function Navbar() {
             ))}
           </div>
             
-          {/* Desktop Language Switcher */}
-          <div className="hidden lg:flex items-center gap-1.5 flex-shrink-0 relative z-10">
+          {/* Desktop Language Switcher - Right Edge */}
+          <div className="hidden lg:flex items-center gap-1.5 flex-shrink-0 relative z-10 lg:pr-4 ml-auto">
             <button
               onClick={() => setLanguage('tr')}
               className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 ${
@@ -117,9 +117,9 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - Right Edge */}
           <button
-            className="lg:hidden p-2 rounded-lg hover:bg-white/10 flex-shrink-0 relative z-10"
+            className="lg:hidden p-2 rounded-lg hover:bg-white/10 flex-shrink-0 relative z-10 px-4 md:px-6"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Menu"
           >
@@ -150,7 +150,7 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden py-4 space-y-2">
+          <div className="lg:hidden py-4 space-y-2 px-4 md:px-6">
             {navigation.map((item) => (
               <Link
                 key={item.href}

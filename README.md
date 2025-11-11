@@ -9,7 +9,7 @@ Navmar Agency için Next.js 14 ve Tailwind CSS kullanılarak geliştirilmiş mod
 - 📱 **Responsive Tasarım** - Mobil öncelikli tasarım
 - 🔍 **SEO Uyumlu** - Her sayfa için optimize edilmiş meta taglar
 - 💼 **TypeScript** - Tip güvenli kod yapısı
-- ✨ **Modern UI** - Lacivert (#001b44) ve Altın (#d4af37) renk şeması
+- ✨ **Modern UI** - Lacivert (#001b44) ve Parlak Altın (#FFD700) renk şeması
 
 ## 📄 Sayfalar
 
@@ -50,8 +50,8 @@ npm run dev
 ## 🎨 Renk Paleti
 
 - **Primary (Lacivert)**: `#001b44`
-- **Accent (Altın)**: `#d4af37`
-- **Accent Hover**: `#c29c24`
+- **Accent (Parlak Altın)**: `#FFD700`
+- **Accent Hover**: `#FFC107`
 - **Background**: `#ffffff`
 
 ## 📁 Proje Yapısı
@@ -100,8 +100,8 @@ npm run dev
 ```typescript
 colors: {
   primary: "#001b44",  // Lacivert
-  accent: "#d4af37",   // Altın
-  "accent-hover": "#c29c24",
+  accent: "#FFD700",   // Parlak Altın
+  "accent-hover": "#FFC107",
 }
 ```
 
