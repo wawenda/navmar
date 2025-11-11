@@ -34,12 +34,12 @@ export default function Navbar() {
     <nav 
       className="text-white fixed top-0 left-0 right-0 z-50 bg-primary shadow-lg overflow-hidden"
     >
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20 md:h-24">
           {/* Logo - Simple Design */}
           <Link 
             href={getLocalizedHref("/")}
-            className="flex items-center gap-2.5 px-3 py-2 transition-all duration-300 group relative z-10"
+            className="flex items-center gap-2.5 px-2 md:px-3 py-2 transition-all duration-300 group relative z-10 flex-shrink-0"
           >
             {/* Logo Icon - With white background */}
             <div className="bg-white p-1 md:p-1.5 rounded-lg shadow-xl group-hover:shadow-2xl transition-all duration-300 flex-shrink-0">
@@ -63,18 +63,13 @@ export default function Navbar() {
             </div>
           </Link>
 
-
-
-
-
-
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-1 flex-shrink-0">
+          <div className="hidden lg:flex items-center space-x-1 flex-1 justify-center max-w-2xl mx-auto">
             {navigation.map((item) => (
               <Link
                 key={item.href}
                 href={getLocalizedHref(item.href)}
-                className={`px-4 py-2 rounded-lg transition-all duration-200 ${
+                className={`px-4 py-2 rounded-lg transition-all duration-200 whitespace-nowrap relative z-10 ${
                   isActivePath(item.href)
                     ? "bg-accent text-primary font-semibold"
                     : "text-white/90 hover:bg-white/10 hover:text-white"
@@ -83,48 +78,48 @@ export default function Navbar() {
                 {t(`nav.${item.key}`)}
               </Link>
             ))}
+          </div>
             
-            {/* Language Switcher */}
-            <div className="ml-2 flex items-center gap-1 bg-white/10 rounded-lg p-1">
-              <button
-                onClick={() => setLanguage('tr')}
-                className={`px-3 py-1.5 rounded-md text-xs font-semibold transition-all flex items-center gap-1.5 ${
-                  language === 'tr'
-                    ? 'bg-accent text-primary'
-                    : 'text-white/80 hover:text-white'
-                }`}
-              >
-                <Image src="/flags/tr.svg" alt="TR" width={20} height={15} className="w-5 h-4" />
-                <span>TR</span>
-              </button>
-              <button
-                onClick={() => setLanguage('en')}
-                className={`px-3 py-1.5 rounded-md text-xs font-semibold transition-all flex items-center gap-1.5 ${
-                  language === 'en'
-                    ? 'bg-accent text-primary'
-                    : 'text-white/80 hover:text-white'
-                }`}
-              >
-                <Image src="/flags/en.svg" alt="EN" width={20} height={15} className="w-5 h-4" />
-                <span>EN</span>
-              </button>
-              <button
-                onClick={() => setLanguage('ru')}
-                className={`px-3 py-1.5 rounded-md text-xs font-semibold transition-all flex items-center gap-1.5 ${
-                  language === 'ru'
-                    ? 'bg-accent text-primary'
-                    : 'text-white/80 hover:text-white'
-                }`}
-              >
-                <Image src="/flags/ru.svg" alt="RU" width={20} height={15} className="w-5 h-4" />
-                <span>RU</span>
-              </button>
-            </div>
+          {/* Desktop Language Switcher */}
+          <div className="hidden lg:flex items-center gap-1.5 flex-shrink-0 relative z-10">
+            <button
+              onClick={() => setLanguage('tr')}
+              className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 ${
+                language === 'tr'
+                  ? 'bg-accent text-primary shadow-md'
+                  : 'text-white/80 hover:bg-white/10 hover:text-white'
+              }`}
+            >
+              <Image src="/flags/tr.svg" alt="TR" width={20} height={15} className="w-5 h-4" />
+              <span>TR</span>
+            </button>
+            <button
+              onClick={() => setLanguage('en')}
+              className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 ${
+                language === 'en'
+                  ? 'bg-accent text-primary shadow-md'
+                  : 'text-white/80 hover:bg-white/10 hover:text-white'
+              }`}
+            >
+              <Image src="/flags/en.svg" alt="EN" width={20} height={15} className="w-5 h-4" />
+              <span>EN</span>
+            </button>
+            <button
+              onClick={() => setLanguage('ru')}
+              className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 ${
+                language === 'ru'
+                  ? 'bg-accent text-primary shadow-md'
+                  : 'text-white/80 hover:bg-white/10 hover:text-white'
+              }`}
+            >
+              <Image src="/flags/ru.svg" alt="RU" width={20} height={15} className="w-5 h-4" />
+              <span>RU</span>
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 rounded-lg hover:bg-white/10 flex-shrink-0"
+            className="lg:hidden p-2 rounded-lg hover:bg-white/10 flex-shrink-0 relative z-10"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Menu"
           >
@@ -213,5 +208,3 @@ export default function Navbar() {
     </nav>
   );
 }
-
-

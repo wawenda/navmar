@@ -94,7 +94,7 @@ export default function Hakkimizda() {
               </h2>
               <div className="space-y-4 text-gray-700 leading-relaxed">
                 <p>
-                  <strong className="text-primary">{t('about.company.name')}</strong>, {t('about.company.description1')}
+                   {t('about.company.description1')}
                 </p>
                 <p>
                   {t('about.company.description2')}
