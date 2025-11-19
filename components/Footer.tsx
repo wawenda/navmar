@@ -17,48 +17,15 @@ export default function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-4 group">
-              {/* Ship-themed logo container */}
-              <div className="relative w-16 h-16 flex-shrink-0">
-                {/* Glowing background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-accent/10 blur-lg group-hover:blur-xl transition-all"></div>
-                
-                {/* Ship hull background - More prominent */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-65 group-hover:opacity-75 transition-opacity">
-                  <svg viewBox="0 0 100 100" className="w-full h-full">
-                    {/* Main hull with depth */}
-                    <path d="M20,75 Q20,55 28,52 L28,42 Q28,38 32,38 L68,38 Q72,38 72,42 L72,52 Q80,55 80,75 Z" 
-                          fill="currentColor" className="text-accent"/>
-                    {/* Hull shine */}
-                    <path d="M25,70 Q25,58 30,55 L30,43 L35,43 L35,55 Q28,58 28,70 Z" 
-                          fill="currentColor" className="text-accent/30"/>
-                    {/* Bridge structure */}
-                    <path d="M32,38 L37,22 L63,22 L68,38 Z" 
-                          fill="currentColor" className="text-accent"/>
-                    {/* Bridge windows */}
-                    <rect x="40" y="26" width="4" height="6" rx="1" fill="currentColor" className="text-white/20"/>
-                    <rect x="48" y="26" width="4" height="6" rx="1" fill="currentColor" className="text-white/20"/>
-                    <rect x="56" y="26" width="4" height="6" rx="1" fill="currentColor" className="text-white/20"/>
-                    {/* Chimney */}
-                    <rect x="46" y="14" width="8" height="8" rx="1" fill="currentColor" className="text-accent"/>
-                    {/* Waves at bottom */}
-                    <path d="M20,75 Q25,73 30,75 Q35,77 40,75 Q45,73 50,75 Q55,77 60,75 Q65,73 70,75 Q75,77 80,75" 
-                          stroke="currentColor" strokeWidth="1.5" fill="none" className="text-accent/30"/>
-                  </svg>
-                </div>
-
-                {/* Main logo */}
-                <div className="absolute inset-2 bg-gradient-to-br from-white via-white to-white rounded-[40%] shadow-xl group-hover:shadow-accent/30 group-hover:scale-105 transition-all flex items-center justify-center" style={{borderRadius: '50% 50% 45% 45%'}}>
-                  <div className="relative w-full h-full p-2">
-                    <Image
-                      src="/logo.png"
-                      alt="Navmar Shipping Agency"
-                      fill
-                      className="object-contain drop-shadow-md"
-                      sizes="64px"
-                    />
-                  </div>
-                </div>
-
+              {/* Logo Icon - Simple Design */}
+              <div className="bg-white p-1.5 rounded-lg shadow-xl group-hover:shadow-2xl transition-all duration-300 flex-shrink-0">
+                <Image
+                  src="/logo.png"
+                  alt="Navmar Agency"
+                  width={64}
+                  height={64}
+                  className="transition-transform duration-300 group-hover:rotate-3 w-16 h-16 object-contain"
+                />
               </div>
 
               <div>
@@ -135,16 +102,16 @@ export default function Footer() {
                 </p>
                 <ul className="space-y-2 text-white/70">
                   <li>
-                    <a href="tel:+905056453119" className="hover:text-accent transition-colors block">
-                      +90 (505) 645 31 19
-                    </a>
-                    <p className="text-xs text-accent">{t('contact.info.phone')}</p>
-                  </li>
-                  <li>
                     <a href="tel:+905455476013" className="hover:text-accent transition-colors block">
                       +90 (545) 547 60 13
                     </a>
                     <p className="text-xs text-accent">{t('footer.service247')}</p>
+                  </li>
+                  <li>
+                    <a href="tel:+905056453119" className="hover:text-accent transition-colors block">
+                      +90 (505) 645 31 19
+                    </a>
+                    <p className="text-xs text-accent">{t('contact.info.phone')}</p>
                   </li>
                   <li>
                     <a href="tel:+903265033119" className="hover:text-accent transition-colors block">
@@ -161,13 +128,13 @@ export default function Footer() {
                 </p>
                 <ul className="space-y-1 text-white/70">
                   <li>
-                    <a href="mailto:info@navmaragency.com" className="hover:text-accent transition-colors">
-                      info@navmaragency.com
+                    <a href="mailto:navmar@navmaragency.com" className="hover:text-accent transition-colors">
+                      navmar@navmaragency.com
                     </a>
                   </li>
                   <li>
-                    <a href="mailto:navmar@navmaragency.com" className="hover:text-accent transition-colors">
-                      navmar@navmaragency.com
+                    <a href="mailto:info@navmaragency.com" className="hover:text-accent transition-colors">
+                      info@navmaragency.com
                     </a>
                   </li>
                 </ul>

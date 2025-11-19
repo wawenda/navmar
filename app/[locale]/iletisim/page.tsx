@@ -51,7 +51,7 @@ export default function Iletisim() {
                         </div>
                         <div className="flex-1 min-w-0">
                           <p className="font-semibold text-primary text-sm">+90 (505) 645 31 19</p>
-                          <p className="text-xs text-accent font-medium">{t('contact.info.phone')}</p>
+                          <p className="text-xs text-accent-hover font-medium">{t('contact.info.phone')}</p>
                         </div>
                       </a>
                       <a
@@ -65,7 +65,7 @@ export default function Iletisim() {
                         </div>
                         <div className="flex-1 min-w-0">
                           <p className="font-semibold text-primary text-sm">+90 (545) 547 60 13</p>
-                          <p className="text-xs text-accent font-medium">{t('contact.info.service247')}</p>
+                          <p className="text-xs text-accent-hover font-medium">{t('contact.info.service247')}</p>
                         </div>
                       </a>
                       <a
@@ -79,7 +79,7 @@ export default function Iletisim() {
                         </div>
                         <div className="flex-1 min-w-0">
                           <p className="font-semibold text-primary text-sm">+90 (326) 503 31 19</p>
-                          <p className="text-xs text-accent font-medium">{t('contact.info.phoneFixed')}</p>
+                          <p className="text-xs text-accent-hover font-medium">{t('contact.info.phoneFixed')}</p>
                         </div>
                       </a>
                     </div>
@@ -152,7 +152,7 @@ export default function Iletisim() {
                           </svg>
                           {t('contact.info.hours')}
                         </h3>
-                        <p className="text-lg font-bold text-accent">7/24</p>
+                        <p className="text-lg font-bold text-accent-hover">7/24</p>
                         <p className="text-xs text-gray-600">{t('contact.info.nonStop')}</p>
                       </div>
 
