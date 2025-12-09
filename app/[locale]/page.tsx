@@ -71,29 +71,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Preview */}
-      <section className="py-16 md:py-20 bg-slate-50">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-              {t('home.services.title')}
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              {t('home.services.subtitle')}
-            </p>
-          </div>
-
-          <div className="text-center mt-12">
-            <Link
-              href={`/${locale}/hizmetler`}
-              className="inline-block bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all duration-200"
-            >
-              {t('home.services.viewAll')}
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* Gallery Section */}
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-6xl mx-auto px-4">
@@ -106,24 +83,6 @@ export default function Home() {
             </p>
           </div>
           <GallerySection />
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 md:py-20 bg-primary text-white">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            {t('home.cta.title')}
-          </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            {t('home.cta.subtitle')}
-          </p>
-          <Link
-            href={`/${locale}/iletisim`}
-            className="inline-block bg-accent text-primary px-10 py-4 rounded-lg font-semibold text-lg hover:bg-accent-hover transition-colors duration-200 shadow-lg"
-          >
-            {t('home.cta.button')}
-          </Link>
         </div>
       </section>
     </>

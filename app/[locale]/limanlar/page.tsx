@@ -8,7 +8,7 @@ import { useState } from "react";
 export default function Limanlar() {
   const { locale, t } = useLanguage();
   const [hoveredPort, setHoveredPort] = useState<number | null>(null);
-  
+
   const ports = [
     {
       key: 'iskenderun',
@@ -69,7 +69,7 @@ export default function Limanlar() {
                 {t('ports.intro.title')}
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-4">
-              {t('ports.intro.description1')}
+                {t('ports.intro.description1')}
               </p>
               <p className="text-gray-600 leading-relaxed">
                 {t('ports.intro.description2')}
@@ -108,7 +108,7 @@ export default function Limanlar() {
                     className="object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className={`absolute inset-0 bg-gradient-to-br ${port.color} opacity-60 group-hover:opacity-40 transition-opacity duration-500`}></div>
-                  
+
                   {/* Overlay Content */}
                   <div className="absolute inset-0 p-8 flex flex-col justify-end">
                     <div className="flex items-center gap-4 mb-3">
@@ -150,11 +150,11 @@ export default function Limanlar() {
                       const details = t(`ports.items.${port.key}.details`);
                       if (Array.isArray(details)) {
                         return details.map((detail: string, idx: number) => (
-                          <div 
-                            key={idx} 
+                          <div
+                            key={idx}
                             className="flex items-start gap-3 group/item"
-                            style={{ 
-                              animation: hoveredPort === index ? `fadeInUp 0.3s ease-out ${idx * 0.1}s both` : 'none' 
+                            style={{
+                              animation: hoveredPort === index ? `fadeInUp 0.3s ease-out ${idx * 0.1}s both` : 'none'
                             }}
                           >
                             <div className="flex-shrink-0 w-6 h-6 bg-accent/10 rounded-lg flex items-center justify-center mt-0.5">
@@ -224,30 +224,6 @@ export default function Limanlar() {
               <p className="text-gray-600 font-medium">{t('ports.stats.reliable')}</p>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 bg-primary text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
-            backgroundSize: '40px 40px'
-          }}></div>
-        </div>
-        <div className="max-w-6xl mx-auto px-4 text-center relative z-10">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            {t('ports.cta.title')}
-          </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            {t('ports.cta.subtitle')}
-          </p>
-          <Link
-            href={`/${locale}/iletisim`}
-            className="inline-block bg-accent text-primary px-8 py-4 rounded-xl font-semibold text-lg hover:bg-accent-hover transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105"
-          >
-            {t('ports.cta.button')}
-          </Link>
         </div>
       </section>
 

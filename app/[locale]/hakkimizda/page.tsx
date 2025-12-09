@@ -7,7 +7,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Hakkimizda() {
   const { locale, t } = useLanguage();
-  
+
   const values = [
     {
       icon: (
@@ -94,7 +94,7 @@ export default function Hakkimizda() {
               </h2>
               <div className="space-y-4 text-gray-700 leading-relaxed">
                 <p>
-                   {t('about.company.description1')}
+                  {t('about.company.description1')}
                 </p>
                 <p>
                   {t('about.company.description2')}
@@ -119,19 +119,19 @@ export default function Hakkimizda() {
                 />
               </div>
               <div className="grid grid-cols-2 gap-6">
-              {stats.map((stat, index) => (
-                <div
-                  key={index}
-                  className="bg-slate-50 rounded-2xl p-6 text-center border border-slate-100 hover:shadow-lg transition-shadow duration-300"
-                >
-                  <div className="text-4xl font-bold text-accent mb-2">
-                    {stat.number}
+                {stats.map((stat, index) => (
+                  <div
+                    key={index}
+                    className="bg-slate-50 rounded-2xl p-6 text-center border border-slate-100 hover:shadow-lg transition-shadow duration-300"
+                  >
+                    <div className="text-4xl font-bold text-accent mb-2">
+                      {stat.number}
+                    </div>
+                    <div className="text-sm text-gray-600 font-medium">
+                      {t(`about.stats.${stat.key}`)}
+                    </div>
                   </div>
-                  <div className="text-sm text-gray-600 font-medium">
-                    {t(`about.stats.${stat.key}`)}
-                  </div>
-                </div>
-              ))}
+                ))}
               </div>
             </div>
           </div>
@@ -180,7 +180,7 @@ export default function Hakkimizda() {
               {t('about.references.subtitle')}
             </p>
           </div>
-          
+
           <ReferencesCarousel />
 
           <div className="text-center mt-16 pt-8 border-t border-slate-200 max-w-4xl mx-auto">
@@ -230,24 +230,6 @@ export default function Hakkimizda() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 bg-primary text-white">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            {t('about.cta.title')}
-          </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            {t('about.cta.subtitle')}
-          </p>
-          <Link
-            href={`/${locale}/iletisim`}
-            className="inline-block bg-accent text-primary px-8 py-4 rounded-lg font-semibold text-lg hover:bg-accent-hover transition-colors duration-200 shadow-lg"
-          >
-            {t('about.cta.button')}
-          </Link>
         </div>
       </section>
     </>

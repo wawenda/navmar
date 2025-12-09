@@ -5,7 +5,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Hizmetler() {
   const { locale, t } = useLanguage();
-  
+
   const services = [
     {
       icon: (
